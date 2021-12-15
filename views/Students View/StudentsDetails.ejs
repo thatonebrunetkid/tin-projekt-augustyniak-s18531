@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JAM - Students Details</title>
+    <link rel="stylesheet" href="../../public/CSS/Generic.css">
+    <link rel="stylesheet" href="../../public/CSS/Fonts.css">
+    <link rel="stylesheet" href="../../public/CSS/Text.css">
+    <link rel="stylesheet" href="../../public/CSS/Buttons.css">
+    <link rel="stylesheet" href="../../public/CSS/StudentsList.css">
+    <link rel="stylesheet" href="../../public/CSS/LoginLayout.css">
+    <link rel="stylesheet" href="../../public/CSS/GradesList.css">
+</head>
+<body>
+<%- include('../fragments/header.ejs')%>
+<section id="content">
+    <div class="content">
+        <h2>Students</h2>
+
+        <div class="studentsListContainer" style="width: auto; height: auto; padding: 3vh; display: flex">
+            <div class="studentsListMerger" style="width: 100%; height: auto; overflow: inherit; display: flex">
+                <form class="LoginForm" style="float: left; margin: 5vh; width: 35%; top: 0; padding: 5vh; height: auto; overflow: inherit; border: 1px solid grey; border-radius: 25px">
+                    <label id="id" class="LoginLabel" style="color: black">ID: </label> <p/> <label id="idValue" class="LoginLabel" style="color: black; margin-left: 3vh">1</label>
+                    <p></p>
+                    <label id="name" class="LoginLabel" style="color: black">Name: </label> <p/> <label id="nameValue" class="LoginLabel" style="color: black; margin-left: 3vh">Jan</label>
+                    <p></p>
+                    <label id="surname" class="LoginLabel" style="color: black">Surname</label> <p/> <label id="surnameValue" class="LoginLabel" style="color: black; margin-left: 3vh">Kowalski</label>
+                    <p></p>
+                    <label id="Adress" class="LoginLabel" style="color: black">Adress: </label> <p/> <label id="AdressValue" class="LoginLabel" style="color: black; margin-left: 3vh">Warszawska 13</label>
+                    <p></p>
+                    <label id="ZipCode" class="LoginLabel" style="color: black">Zip Code: </label> <p/> <label id="ZipCodeValue" class="LoginLabel" style="color: black; margin-left: 3vh">02-654</label>
+                    <p></p>
+                    <label id="Birthdate" class="LoginLabel" style="color: black">Birthdate: </label> <p/> <label id="BirthdateValue" class="LoginLabel" style="color: black; margin-left: 3vh">25.10.1995</label>
+                    <p></p>
+                    <label id="PESEL" class="LoginLabel" style="color: black">PESEL: </label> <p/> <label id="PeselValue" class="LoginLabel" style="color: black; margin-left: 3vh">95102567854</label>
+                    <p></p>
+                    <label id="GradesAvarage" class="LoginLabel" style="color: black">Grades Avarage: </label> <p/> <label id="GradesAvarageValue" class="LoginLabel" style="color: black; margin-left: 3vh">3.14</label>
+                </form>
+                <div class="gradesTable" style="border: 1px solid grey; border-radius: 25px; width: 100%; margin: 15vh; height: 50%; overflow-y: scroll; overflow-x: hidden">
+                    <p style="color: black; text-align: center">Grades</p>
+                    <table class="gradesTable">
+                        <thead>
+                        <tr>
+                            <th>Grade</th>
+                            <th>Subject</th>
+                            <th>Date</th>
+                            <th>Comment</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <square class="sqaure" style="background-color: red">1</square>
+                            </td>
+                            <td>English</td>
+                            <td>01-01-2021</td>
+                            <td>Kolokwium 1</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <square class="sqaure" style="background-color: yellow">4</square>
+                            </td>
+                            <td>English</td>
+                            <td>04-04-2021</td>
+                            <td>Kolokwium 2</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <square class="sqaure" style="background-color: greenyellow">5</square>
+                            </td>
+                            <td>Russian</td>
+                            <td>05-05-2021</td>
+                            <td>Egzamin 1</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <square class="sqaure" style="background-color: red">2</square>
+                            </td>
+                            <td>Russian</td>
+                            <td>05-05-2021</td>
+                            <td>Kolokwium 1</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <square class="sqaure" style="background-color: yellow">3</square>
+                            </td>
+                            <td>Russian</td>
+                            <td>04-04-2021</td>
+                            <td>Kolokwium 2</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <td>
+                            <square class="sqaure" style="background-color: greenyellow">6</square>
+                        </td>
+                        <td>English</td>
+                        <td>06-06-2021</td>
+                        <td>Egzamin 1</td>
+                        </tbody>
+                        <tbody>
+                        <td>
+                            <square class="sqaure" style="background-color: red">1</square>
+                        </td>
+                        <td>English</td>
+                        <td>01-01-2021</td>
+                        <td>Egzamin 2</td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>

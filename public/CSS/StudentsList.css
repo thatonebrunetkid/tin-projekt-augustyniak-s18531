@@ -1,0 +1,54 @@
+.studentsListContainer{
+    background-color: #262931;
+    border-radius: 50px;
+    margin: 3vh;
+}
+.studentsListMerger{
+    background-color: white;
+    border-radius: 40px;
+
+
+}
+.studentsTable{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.studentsTable thead{
+    margin-top: 10vh;
+}
+
+.studentsTable tr{
+    font-family: Comfortaa;
+    font-style: normal;
+    font-size: medium;
+    text-align: center;
+    height: 5vh;
+}
+.studentsTable td{
+    font-family: Comfortaa;
+    font-style: normal;
+    font-size: medium;
+    text-align: center;
+    height: 5vh;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+.studentAddForm{
+    position: relative;
+    left: 12vh;
+    top: 13vh;
+}
+
+.studentsTable tbody{
+    transition: 0.5s;
+}
+.studentsTable tbody:hover{
+    transform: scale(1.025);
+}
+span{
+    color: red;
+    font-family: Comfortaa;
+    font-size: small;
+}

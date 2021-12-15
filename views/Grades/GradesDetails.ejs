@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JAM - Grade Details</title>
+    <link rel="stylesheet" href="/public/CSS/Generic.css">
+    <link rel="stylesheet" href="/public/CSS/Fonts.css">
+    <link rel="stylesheet" href="/public/CSS/Text.css">
+    <link rel="stylesheet" href="/public/CSS/Buttons.css">
+    <link rel="stylesheet" href="/public/CSS/StudentsList.css">
+    <link rel="stylesheet" href="/public/CSS/LoginLayout.css">
+    <link rel="stylesheet" href="/public/CSS/GradesList.css">
+</head>
+<body>
+<%-include('../fragments/header')%>
+<section id="content">
+    <div class="content">
+        <h2>Students</h2>
+
+        <div class="studentsListContainer" style="width: auto; height: auto; padding: 3vh; display: flex">
+            <div class="studentsListMerger" style="width: 100%; height: auto; overflow: inherit; display: flex">
+                <form class="LoginForm" style="float: left; margin: 5vh; width: 77%; top: 0; padding: 5vh; height: auto; overflow: inherit; border: 1px solid grey; border-radius: 25px">
+                    <label id="id" class="LoginLabel" style="color: black">ID: </label> <p/> <label id="idValue" class="LoginLabel" style="color: black; margin-left: 3vh">1</label>
+                    <p></p>
+                    <label id="student" class="LoginLabel" style="color: black">Student: </label> <p/> <label id="studentValue" class="LoginLabel" style="color: black; margin-left: 3vh">Jan Kowalski</label>
+                    <p></p>
+                    <label id="Lecturer" class="LoginLabel" style="color: black">Lecturer: </label> <p/> <label id="lecturerValue" class="LoginLabel" style="color: black; margin-left: 3vh">Małgorzata Angielska</label>
+                    <p></p>
+                    <label id="Grade" class="LoginLabel" style="color: black">Grade: </label> <p/> <label id="gradeValue" class="LoginLabel" style="color: black; margin-left: 3vh">1</label>
+                    <p></p>
+                    <label id="Date" class="LoginLabel" style="color: black">Date: </label> <p/> <label id="dateValue" class="LoginLabel" style="color: black; margin-left: 3vh">01-01-2021</label>
+                    <p></p>
+                    <label id="comment" class="LoginLabel" style="color: black">Comment: </label> <p/> <label id="commentValue" class="LoginLabel" style="color: black; margin-left: 3vh">Kolokwium 1</label>
+                    <p></p>
+                    <label id="Subject" class="LoginLabel" style="color: black">Subject: </label> <p/> <label id="subjectValue" class="LoginLabel" style="color: black; margin-left: 3vh">English</label>
+                </form>
+            </div>
+
+        </div>
+        <a href="/grades"><input type="button" class="loginButton" style="float: left; display: table; left: 45%; bottom: 5%" value="Back"></a>
+    </div>
+</section>

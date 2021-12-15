@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JAM - Sign-In</title>
+    <link rel="stylesheet" href="../../public/CSS/Generic.css">
+    <link rel="stylesheet" href="../../public/CSS/Buttons.css">
+    <link rel="stylesheet" href="../../public/CSS/Fonts.css">
+    <link rel="stylesheet" href="../../public/CSS/LoginLayout.css">
+    <link rel="stylesheet" href="../../public/CSS/Text.css">
+</head>
+<body>
+<nav>
+    <div id="banner">
+        <div class="upperBanner">
+            <img class="logo" src="../../public/Assets/logo.ong.png" alt="Jam logo">
+            <button class="loginButton" onclick="window.location.href='Login.html'" style="left: 177vh; top: -3px;">SIGN IN</button>
+        </div>
+    </div>
+    <div class="ButtonsBanner">
+        <div class="ButtonsBox">
+            <div class="ButtonsContainer">
+                <ul class="ButtonsList">
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='index.ejs'"><b>Home</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button  class="navButton" onclick="window.location.href='../Students View/Students.ejs'"><b>Students</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../Grades/GradesList.ejs'"><b>Grades</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../Subject View/SubjectsList.ejs'"><b>Subjects</b></button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="content" style="font-size: small">
+    <div class="loginBox">
+        <form class="LoginForm">
+            <label class="LoginLabel" for="email">Email</label>
+            <p></p>
+            <input class="TextField" name="email" id="email" placeholder="Input Email" type="text">
+            <span id="errorEmail"></span>
+            <p></p>
+            <label class="LoginLabel" for="password">Password</label>
+            <p></p>
+            <input class="TextField" name="password" id="password" placeholder="Input Password" type="password">
+            <span id="errorPassword"></span>
+        </form>
+        <ul style="list-style-type: none; position: relative; top: 18vh; left: 2vh">
+            <li>
+                <button type="submit" class="loginButton" style="float: left; display: table; margin: 15px;">SIGN IN</button>
+            </li>
+            <li>
+                <button onclick="window.location.href='Register.ejs'" class="loginButton" style="float: left; display: table; margin: 15px">SIGN-UP</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

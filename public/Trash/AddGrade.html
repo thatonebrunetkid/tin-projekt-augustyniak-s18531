@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+    <title>JAM - Grade Add</title>
+    <link rel="stylesheet" href="../CSS/Generic.css">
+    <link rel="stylesheet" href="../CSS/Fonts.css">
+    <link rel="stylesheet" href="../CSS/Text.css">
+    <link rel="stylesheet" href="../CSS/Buttons.css">
+    <link rel="stylesheet" href="../CSS/LoginLayout.css">
+    <link rel="stylesheet" href="../CSS/GradesList.css">
+    <script type="application/javascript" src="../JS/validationCommon.js"></script>
+    <script type="application/javascript" src="../JS/validationGradesForm.js"></script>
+</head>
+<body>
+<nav>
+    <div id="banner">
+        <div class="upperBanner">
+            <img class="logo" src="../Assets/logo.ong.png" alt="Jam logo">
+            <button class="loginButton" onclick="window.location.href='../../views/Main/Login.ejs'" style="left: 177vh; top: -3px;">SIGN IN</button>
+        </div>
+    </div>
+    <div class="ButtonsBanner">
+        <div class="ButtonsBox">
+            <div class="ButtonsContainer">
+                <ul class="ButtonsList">
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../../views/index.ejs'"><b>Home</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button  class="navButton" onclick="window.location.href='../../views/Students View/Students.ejs'"><b>Students</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../../views/Grades/GradesList.ejs'"><b>Grades</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../../views/Subject View/SubjectsList.ejs'"><b>Subjects</b></button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<section id="content">
+    <div class="content">
+        <h2>Grades</h2>
+
+
+        <div class="gradesListContainer" style="width: auto; height: auto; min-height: 100vh; margin-left: 25vh; padding: 3vh">
+            <div class="gradesListMerger" style="width: auto; height: auto; min-height: 100vh; overflow-x: hidden; overflow-y: scroll">
+                <form class="gradeAddForm" novalidate onsubmit="return validateGradesForm();">
+                    <label class="LoginLabel" style="color: black" for="student">Student</label>
+                    <p></p>
+                    <select class="SelectField" name="student" id="student">
+                        <option>Select option</option>
+                        <option value="1">Jan Kowalski</option>
+                    </select>
+                    <p></p>
+                    <label class="LoginLabel" style="color: black" for="grade">Grade</label>
+                    <p></p>
+                    <input class="TextField" type="number" id="grade">
+                    <p></p>
+                    <label class="LoginLabel" style="color: black" for="date">Date</label>
+                    <p></p>
+                    <input class="TextField" type="date" id="date">
+                    <p></p>
+                    <label class="LoginLabel" style="color: black" for="comment">Comment</label>
+                    <p></p>
+                    <input class="TextField" type="text" id="comment">
+                    <p></p>
+                    <label class="LoginLabel" style="color: black" for="subject">Subject</label>
+                    <p></p>
+                    <select class="SelectField" name="subject" id="subject">
+                        <option>Select option</option>
+                        <option value="1">Subject 1</option>
+                        <option value="2">Subject 2</option>
+                    </select>
+                </form>
+                <ul style="list-style-type: none; position: relative; top: 15vh; left: 50vh">
+                    <li>
+                        <button type="submit" class="loginButton" style="float: left; display: table; margin: 15px;">SUBMIT</button>
+                    </li>
+                    <li>
+                        <button class="loginButton" type="submit" style="float: left; display: table; margin: 15px">CANCEL</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

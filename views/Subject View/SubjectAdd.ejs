@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JAM - Subject Add</title>
+    <link rel="stylesheet" href="../../public/CSS/Generic.css">
+    <link rel="stylesheet" href="../../public/CSS/Fonts.css">
+    <link rel="stylesheet" href="../../public/CSS/Text.css">
+    <link rel="stylesheet" href="../../public/CSS/Buttons.css">
+    <link rel="stylesheet" href="../../public/CSS/LoginLayout.css">
+    <link rel="stylesheet" href="../../public/CSS/SubjectsList.css">
+</head>
+<body>
+<nav>
+    <div id="banner">
+        <div class="upperBanner">
+            <img class="logo" src="../../public/Assets/logo.ong.png" alt="Jam logo">
+            <button class="loginButton" onclick="window.location.href='Login.html'" style="left: 85%; top: -3px;">SIGN IN</button>
+        </div>
+    </div>
+    <div class="ButtonsBanner">
+        <div class="ButtonsBox">
+            <div class="ButtonsContainer">
+                <ul class="ButtonsList">
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../index.ejs'"><b>Home</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button  class="navButton" onclick="window.location.href='../Students View/Students.ejs'"><b>Students</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../Grades/GradesList.ejs'"><b>Grades</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='SubjectsList.ejs'"><b>Subjects</b></button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+<section id="content">
+    <div class="content">
+        <h2>Subjects</h2>
+
+
+        <div class="subjectListContainer" style="width: 150vh; height: auto; min-height: 100vh; margin-left: 25vh; padding: 3vh">
+            <div class="subjectListMerger" style="width: 150vh; height: auto; min-height: 100vh; overflow-y: scroll; overflow-x: hidden">
+                <form class="LoginForm">
+                    <label class="LoginLabel" style="color: black" for="name">Name</label>
+                    <p></p>
+                    <input type="text" class="TextField" name="name" id="name" placeholder="Input name">
+                    <p></p>
+                    <span id="nameError"></span>
+                    <p></p>
+                    <label class="LoginLabel" style="color: black;" for="shortName">Short name</label>
+                    <p></p>
+                    <input type="text" class="TextField" name="shortName" id="shortName" placeholder="Input shortName" maxlength="3">
+                    <p></p>
+                    <span id="shortNameError"></span>
+                    <label class="LoginLabel" for="Price" style="color: black;">Price</label>
+                    <p></p>
+                    <input type="number" class="TextField" name="Price" id="Price" placeholder="Input price">
+                    <p></p>
+                    <span id="PriceError"></span>
+                    <p></p>
+                    <label class="LoginLabel" for="Availibility" style="color: black;">Availability</label>
+                    <p></p>
+                    <select class="SelectField" name="Availibility" id="Availibility">
+                        <option>Select option</option>
+                        <option value="1">Available</option>
+                        <option value="2">Unavailable</option>
+                    </select>
+                    <p></p>
+                    <span id="AvailibilityError"></span>
+                    <p></p>
+                    <label class="LoginLabel" for="lecturer" style="color: black;">Lecturer</label>
+                    <p></p>
+                    <input class="TextField" id="lecturer" name="lecturer" type="text" placeholder="Input Lecturer">
+                    <p></p>
+                    <span id="lecturerError"></span>
+                </form>
+                <ul style="list-style-type: none; position: relative; top: 15vh; left: 50vh">
+                    <li>
+                        <button onclick="window.location.href='SubjectError.ejs'" type="submit" class="loginButton" style="float: left; display: table; margin: 15px;">SUBMIT</button>
+                    </li>
+                    <li>
+                        <button onclick="window.location.href='SubjectsList.ejs'" class="loginButton" type="submit" style="float: left; display: table; margin: 15px">CANCEL</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>

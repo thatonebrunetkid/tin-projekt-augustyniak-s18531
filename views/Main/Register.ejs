@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JAM - Sign-Up</title>
+    <link rel="stylesheet" href="../../public/CSS/LoginLayout.css">
+    <link rel="stylesheet" href="../../public/CSS/Generic.css">
+    <link rel="stylesheet" href="../../public/CSS/Fonts.css">
+    <link rel="stylesheet" href="../../public/CSS/Text.css">
+    <link rel="stylesheet" href="../../public/CSS/Buttons.css">
+</head>
+<body>
+<nav>
+    <div id="banner">
+        <div class="upperBanner">
+            <img class="logo" src="../../public/Assets/logo.ong.png" alt="Jam logo">
+            <button class="loginButton" onclick="window.location.href='Login.html'" style="left: 177vh; top: -3px;">SIGN IN</button>
+        </div>
+    </div>
+    <div class="ButtonsBanner">
+        <div class="ButtonsBox">
+            <div class="ButtonsContainer">
+                <ul class="ButtonsList">
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='index.ejs'"><b>Home</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button  class="navButton" onclick="window.location.href='../Students View/Students.ejs'"><b>Students</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../Grades/GradesList.ejs'"><b>Grades</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../Subject View/SubjectsList.ejs'"><b>Subjects</b></button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="content">
+    <div id="elements">
+
+        <div class="loginBox" style="height: 75vh; margin-top: 5vh">
+            <form class="LoginForm" style="top: 5vh">
+                <label class="LoginLabel" for="name">Name</label>
+                <p></p>
+                <input class="TextField" name="name" id="name" type="text" placeholder="Input name">
+                <span id="errorName"></span>
+                <p></p>
+                <label class="LoginLabel" for="surname">Surname</label>
+                <p></p>
+                <input class="TextField" name="surname" id="surname" type="text" placeholder="Input surname">
+                <span id="surnameError"></span>
+                <p></p>
+                <label class="LoginLabel" for="email">Email</label>
+                <p></p>
+                <input class="TextField" name="email" id="email" type="text" placeholder="Input email">
+                <span id="emailError"></span>
+                <p></p>
+                <label class="LoginLabel" for="password">Password</label>
+                <p></p>
+                <input class="TextField" name="password" id="password" type="password" placeholder="Define password">
+                <span id="passwordError"></span>
+                <p></p>
+                <label class="LoginLabel" for="confirmPassword">Confirm password</label>
+                <p></p>
+                <input class="TextField" name="confirmPassword" id="confirmPassword" type="password" placeholder="Confirm password">
+                <span id="confirmPasswordError"></span>
+            </form>
+            <ul style="list-style-type: none; position: relative; top: 6vh; left: 2vh">
+                <li>
+                    <button onclick="window.location.href='Login.html'" class="loginButton" style="float: left; display: table; margin: 15px;">SIGN IN</button>
+                </li>
+                <li>
+                    <button class="loginButton" type="submit" style="float: left; display: table; margin: 15px">SIGN-UP</button>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

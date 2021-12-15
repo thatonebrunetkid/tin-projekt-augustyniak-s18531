@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JAM - Subjects</title>
+    <link rel="stylesheet" href="/public/CSS/Generic.css">
+    <link rel="stylesheet" href="/public/CSS/Buttons.css">
+    <link rel="stylesheet" href="/public/CSS/Fonts.css">
+    <link rel="stylesheet" href="./public/CSS/LoginLayout.css">
+    <link rel="stylesheet" href="./public/CSS/Text.css">
+    <link rel="stylesheet" href="/public/CSS/SubjectsList.css">
+</head>
+<body>
+<%-include('../fragments/header')%>
+<h2>Subjects</h2>
+
+<div class="subjectListContainer" style="width: auto; height: auto; min-height: 100vh; margin-left: 25vh; padding: 3vh">
+    <div class="subjectListMerger" style="width: auto; height: auto; min-height: 100vh; overflow-x: hidden; overflow-y: scroll">
+        <table class="subjectTable">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Short Name</th>
+                <th>Price</th>
+                <th>Availibility</th>
+                <th>Lecturer</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="English">
+            <tr>
+                <td>ENGLISH</td>
+                <td>ENG</td>
+                <td>60 PLN / h</td>
+                <td>
+                    <svg height="25" width="25">
+                        <circle cx="15" cy="15" r="8.5" stroke="black" stroke-width="3" fill="green" />
+                    </svg>
+                </td>
+                <td>Anna Angielska</td>
+                <td>
+                    <ul style="list-style-type: none">
+                        <li>
+                            <a href="/subjects/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
+                        </li>
+                        <li>
+                            <button class="loginButton" style="margin-bottom: 5px">Delete</button>
+                        </li>
+                        <li>
+                            <a href="/subjects/details/1"><button class="loginButton" style="margin-bottom: 5px">Details</button> </a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+            <tbody id="Russian">
+            <tr>
+                <td>RUSSIAN</td>
+                <td>RUS</td>
+                <td>60 PLN / h</td>
+                <td>
+                    <svg height="25" width="25">
+                        <circle cx="15" cy="15" r="8.5" stroke="black" stroke-width="3" fill="green" />
+                    </svg>
+                </td>
+                <td>Anna Rosyjska</td>
+                <td>
+                    <ul style="list-style-type: none">
+                        <li>
+                            <a href="/subjects/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
+                        </li>
+                        <li>
+                            <button class="loginButton" style="margin-bottom: 5px">Delete</button>
+                        </li>
+                        <li>
+                            <a href="/subjects/details/1"><button class="loginButton" style="margin-bottom: 5px">Details</button> </a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+            <tbody id="Japan">
+            <tr>
+                <td>JAPANEESE</td>
+                <td>JPN</td>
+                <td>150 PLN / h</td>
+                <td>
+                    <svg height="25" width="25">
+                        <circle cx="15" cy="15" r="8.5" stroke="black" stroke-width="3" fill="green" />
+                    </svg>
+                </td>
+                <td>Jacek Japonski</td>
+                <td>
+                    <ul style="list-style-type: none">
+                        <li>
+                            <a href="/subjects/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
+                        </li>
+                        <li>
+                            <button class="loginButton" style="margin-bottom: 5px">Delete</button>
+                        </li>
+                        <li>
+                            <a href="/subjects/details/1"><button class="loginButton" style="margin-bottom: 5px">Details</button> </a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+            <tbody id="Portugal">
+            <tr>
+                <td>PORTUGAL</td>
+                <td>PRT</td>
+                <td>90 PLN / h</td>
+                <td>
+                    <svg height="25" width="25">
+                        <circle cx="15" cy="15" r="8.5" stroke="black" stroke-width="3" fill="green" />
+                    </svg>
+                </td>
+                <td>Anna Portugalska</td>
+                <td>
+                    <ul style="list-style-type: none">
+                        <li>
+                            <a href="/subjects/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
+                        </li>
+                        <li>
+                            <button class="loginButton" style="margin-bottom: 5px">Delete</button>
+                        </li>
+                        <li>
+                            <a href="/subjects/details/1"><button class="loginButton" style="margin-bottom: 5px">Details</button> </a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+            <tbody id="Spanish">
+            <tr>
+                <td>SPANISH</td>
+                <td>ESP</td>
+                <td>100 PLN / h</td>
+                <td>
+                <svg width="25" height="25">
+                    <circle cx="15" cy="15" r="8.5" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+                </td>
+                <td>Jacek Hiszpański</td>
+                <td>
+                    <ul style="list-style-type: none">
+                        <li>
+                            <a href="/subjects/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
+                        </li>
+                        <li>
+                            <button class="loginButton" style="margin-bottom: 2vh">Delete</button>
+                        </li>
+                        <li>
+                            <a href="/subjects/details/1"><button class="loginButton" style="margin-bottom: 5px">Details</button> </a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="/subjects/addSubject"><button class="loginButton" style="margin: 1vh; left: 65vh">Add new subject</button> </a>
+    </div>
+</div>
+
+</body>
+</html>

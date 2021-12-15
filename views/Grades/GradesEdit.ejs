@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+  <title>JAM - Edit Grade</title>
+  <link rel="stylesheet" href="/public/CSS/Generic.css">
+  <link rel="stylesheet" href="/public/CSS/Fonts.css">
+  <link rel="stylesheet" href="/public/CSS/Text.css">
+  <link rel="stylesheet" href="/public/CSS/Buttons.css">
+  <link rel="stylesheet" href="/public/CSS/LoginLayout.css">
+  <link rel="stylesheet" href="/public/CSS/GradesList.css">
+  <link rel="stylesheet" href="/public/CSS/errors.css">
+  <script type="application/javascript" src="/public/JS/validationCommon.js"></script>
+  <script type="application/javascript" src="/public/JS/validationGradesForm.js"></script>
+</head>
+<body>
+<%-include('../fragments/header')%>
+
+<section id="content">
+  <div class="content">
+    <h2>Grades</h2>
+
+
+    <div class="gradesListContainer" style="width: auto; height: auto; min-height: 100vh; margin-left: 25vh; padding: 3vh">
+      <div class="gradesListMerger" style="width: auto; height: auto; min-height: 100vh; overflow-x: hidden; overflow-y: scroll">
+        <form class="gradeAddForm" novalidate onsubmit="return validateGradesForm();">
+          <label class="LoginLabel" style="color: black" for="student">Student</label>
+          <p></p>
+          <select class="SelectField" name="student" id="student">
+            <option value="1">Jan Kowalski</option>
+            <option>Select option</option>
+          </select>
+          <p></p>
+          <span id="studentError" class="errors-text"></span>
+          <p></p>
+          <label class="LoginLabel" style="color: black" for="grade">Grade</label>
+          <p></p>
+          <input class="TextField" id="grade" type="number" value="3">
+          <p></p>
+          <span id="gradeError" class="errors-text"></span>
+          <p></p>
+          <label class="LoginLabel" style="color: black" for="date">Date</label>
+          <p></p>
+          <input class="TextField" id="date" type="date" value="1999-03-22">
+          <p></p>
+          <span id="dateError" class="errors-text"></span>
+          <p></p>
+          <label class="LoginLabel" style="color: black" for="comment">Comment</label>
+          <p></p>
+          <input class="TextField" type="text" id="comment" value="ocena1">
+          <p></p>
+          <span id="commentError" class="errors-text"></span>
+          <p></p>
+          <label class="LoginLabel" style="color: black" for="subject">Subject</label>
+          <p></p>
+          <select class="SelectField" name="subject" id="subject" >
+            <option value="1">Subject 1</option>
+            <option value="2">Subject 2</option>
+            <option >Select option</option>
+          </select>
+          <p></p>
+          <span id="subjectError" class="errors-text"></span>
+          <p></p>
+          <span id="errorSummary" class="errors-text"></span>
+          <ul style="list-style-type: none; position: relative; top: 15vh; left: 50vh">
+            <li>
+              <input type="submit" class="loginButton" style="float: left; display: table; margin: 15px;"/>
+            </li>
+            <li>
+
+              <a href="/grades"><input type="button" class="loginButton" style="float: left; display: table; margin: 15px" value="Cancel"></a>
+            </li>
+          </ul>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+.gradesListContainer{
+    background-color: #262931;
+    border-radius: 50px;
+    margin: 3vh;
+}
+.gradesListMerger{
+    background-color: white;
+    border-radius: 40px;
+}
+.gradesTable{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.gradesTable thead{
+    margin-top: 10vh;
+}
+
+.gradesTable tr{
+    font-family: Comfortaa;
+    font-style: normal;
+    font-size: medium;
+    text-align: center;
+    height: 5vh;
+}
+.gradesTable td{
+    font-family: Comfortaa;
+    font-style: normal;
+    font-size: medium;
+    text-align: center;
+    height: 5vh;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+
+.gradesTable tbody{
+    transition: 0.5s;
+}
+.gradesTable tbody:hover{
+    transform: scale(1.025);
+}
+span{
+    color: red;
+    font-family: Comfortaa;
+    font-size: small;
+}
+.sqaure{
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    margin: 3vh;
+    display: inline-block;
+}
+.gradeAddForm{
+    position: relative;
+    left: 12vh;
+    top: 13vh;
+}
+
+.errors-text{
+    display: block;
+    font-size: 0.85em;
+    line-height: 2.25rem;
+    margin-top: 0.5em;
+    color:red;
+}

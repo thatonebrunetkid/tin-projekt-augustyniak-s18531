@@ -1,0 +1,52 @@
+.subjectListContainer{
+    background-color: #262931;
+    border-radius: 50px;
+    margin: 3vh;
+}
+.subjectListMerger{
+    background-color: white;
+    border-radius: 40px;
+}
+.subjectTable{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.subjectTable thead{
+    margin-top: 10vh;
+}
+
+.subjectTable tr{
+    font-family: Comfortaa;
+    font-style: normal;
+    font-size: medium;
+    text-align: center;
+    height: 5vh;
+}
+.subjectTable td{
+    font-family: Comfortaa;
+    font-style: normal;
+    font-size: medium;
+    text-align: center;
+    height: 5vh;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+
+.subjectTable tbody{
+    transition: 0.5s;
+}
+.subjectTable tbody:hover{
+    transform: scale(1.025);
+}
+span{
+    color: red;
+    font-family: Comfortaa;
+    font-size: small;
+}
+.subjectAddForm{
+    position: relative;
+    left: 12vh;
+    top: 13vh;
+}

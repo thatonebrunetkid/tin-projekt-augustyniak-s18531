@@ -1,0 +1,59 @@
+.loginButton{
+    font-family: Comfortaa;
+    font-size: smaller;
+    font-style: normal;
+    border: transparent;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    height: 25px;
+    opacity: 0.6;
+    transition: 0.5s;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.classicButton{
+    font-family: Comfortaa;
+    font-size: smaller;
+    font-style: normal;
+    border: transparent;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    height: 25px;
+    opacity: 0.6;
+    transition: 0.5s;
+    cursor: pointer;
+    position: relative;
+}
+
+.classicButton:hover{
+    opacity: 1;
+}
+
+.loginButton:hover
+{
+    opacity: 1;
+}
+
+.navButton{
+    background-color: transparent;
+    border: 2px solid transparent;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-size: medium;
+    width: 150px;
+    height: 25px;
+    transition: 0.5s;
+    color: #d2d2d2;
+    cursor: pointer;
+}
+.navButton:hover{
+    border: 2px solid #ddd;
+}
+
+

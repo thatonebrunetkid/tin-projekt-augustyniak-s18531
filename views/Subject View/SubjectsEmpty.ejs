@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JAM - Subjects Empty</title>
+  <link rel="stylesheet" href="../../public/CSS/Generic.css">
+  <link rel="stylesheet" href="../../public/CSS/Buttons.css">
+  <link rel="stylesheet" href="../../public/CSS/Fonts.css">
+  <link rel="stylesheet" href="../../public/CSS/LoginLayout.css">
+  <link rel="stylesheet" href="../../public/CSS/Text.css">
+  <link rel="stylesheet" href="../../public/CSS/SubjectsList.css">
+</head>
+<body>
+<nav>
+  <div id="banner">
+    <div class="upperBanner">
+      <img class="logo" src="../../public/Assets/logo.ong.png" alt="Jam logo">
+      <button class="loginButton" onclick="window.location.href='Login.html'" style="left: 85%; top: -3px;">SIGN IN</button>
+    </div>
+  </div>
+  <div class="ButtonsBanner">
+    <div class="ButtonsBox">
+      <div class="ButtonsContainer">
+        <ul class="ButtonsList">
+          <li class="navButtonListContainer">
+            <button class="navButton" onclick="window.location.href='../index.ejs'"><b>Home</b></button>
+          </li>
+          <li class="navButtonListContainer">
+            <button  class="navButton" onclick="window.location.href='../Students View/Students.ejs'"><b>Students</b></button>
+          </li>
+          <li class="navButtonListContainer">
+            <button class="navButton" onclick="window.location.href='../Grades/GradesList.ejs'"><b>Grades</b></button>
+          </li>
+          <li class="navButtonListContainer">
+            <button class="navButton" onclick="window.location.href='SubjectsList.ejs'"><b>Subjects</b></button>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</nav>
+<h2>Subjects</h2>
+
+<div class="subjectListContainer" style="width: 150vh; height: 100vh; margin-left: 25vh; padding: 3vh">
+  <div class="subjectListMerger" style="width: 150vh; height: 100vh">
+    <table class="subjectTable">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Short Name</th>
+        <th>Price</th>
+        <th>Availibility</th>
+        <th>Lecturer</th>
+        <th></th>
+      </tr>
+      </thead>
+    </table>
+    <p style="color: black; text-align: center">No records found!</p>
+    <ul style="list-style-type: none; position: relative; top: 15vh; left: 63vh">
+      <li>
+        <button onclick="window.location.href='../index.ejs'" class="loginButton" type="submit" style="float: left; display: table; margin: 15px">BACK</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

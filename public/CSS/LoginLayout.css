@@ -1,0 +1,36 @@
+.loginBox{
+    width: 25%;
+    height: 50vh;
+    position: relative;
+    margin-top: 20vh;
+    background-color: #262931;
+    border-radius: 50px;
+    margin-left: 75vh;
+}
+
+.TextField{
+    width: 50%;
+    position: relative;
+    margin-left: 10vh;
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.SelectField{
+    border-radius: 50px;
+    width: 50%;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 5vh;
+}
+
+.LoginForm{
+    position: relative;
+    left: 12vh;
+    top: 13vh;
+}

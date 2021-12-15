@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAM - Home</title>
+    <link rel="stylesheet" href="/public/CSS/Generic.css">
+    <link rel="stylesheet" href="/public/CSS/layout.css">
+    <link rel="stylesheet" href="/public/CSS/Fonts.css">
+    <link rel="stylesheet" href="/public/CSS/Text.css">
+    <link rel="stylesheet" href="/public/CSS/Buttons.css">
+</head>
+<body>
+<%- include('./fragments/header.ejs')%>
+<div id="content">
+<section id="WelcomeBox">
+    <div class="WelcomeBox">
+        <h1 class="WelcomeText">JAM</h1>
+        <h1 class="DescribingText">Your window to managing students</h1>
+    </div>
+</section>
+
+<section id="PageContent">
+    <div class="PageContentContainer"></div>
+    <svg style="display: flex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 317">
+        <path fill="#262931" fill-opacity="1" d="M0,288L80,282.7C160,277,320,267,480,245.3C640,224,800,192,960,149.3C1120,107,1280,53,1360,26.7L1440,0L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+    </svg>
+    <div class="FirstBox">
+        <h2>Our mission</h2>
+        <p>We want to provide you a complete tool to help you manage your lessons and students.</p>
+        <p>Thanks to it, your work will be easy and pleasant.</p>
+        <p>Do not wait, register today.</p>
+    </div>
+
+    <div class="SecondBox">
+        <div class="leftheader">
+        <h2>Topics</h2>
+        </div>
+
+        <ul class="flagArray">
+            <li>
+                <div class="flagContainer" style="background-image: url(../public/Assets/uk.png)">English</div>
+            </li>
+            <li>
+                <div class="flagContainer" style="background-image: url(../public/Assets/rus.png)">Russian</div>
+            </li>
+            <li>
+                <div class="flagContainer" style="background-image: url(../public/Assets/prt.png)">Portugal</div>
+            </li>
+            <li>
+                <div class="flagContainer" style="background-image: url(../public/Assets/jp.png)">Japan</div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="ThirdBox">
+        <h2>Opportunities</h2>
+        <div class="OpportunityText">
+        <p><b>The new, fresh view of managing students and lessons. Few languages and various unique ways to supervise them. Grades, bills and students in one place. Few dashboards, charts and groups fasten in one clear flow. You can have this basically for free. Check out or pricing and start be efficiency today!</b></p>
+        </div>
+    </div>
+
+    <div class="Pricing">
+        <div class="leftheader">
+            <h2>Pricing</h2>
+        </div>
+        <ul class="priceArray">
+            <li class="priceElement">
+                <div class="priceBox">
+                    <h3>FREE</h3>
+                    <p>- Full access to our solutions</p>
+                    <p>- Available everywhere, anytime</p>
+                    <h2 style="text-align: center; padding-top: 18vh; padding-left: 5vh">0$</h2>
+                </div>
+            </li>
+            <li class="priceElement">
+                <div class="priceBox">
+                    <h3>PREMIUM</h3>
+                    <p>- Full access to our solution</p>
+                    <p>- Available everywhere, anytime</p>
+                    <p>- 24h technical support</p>
+                    <h2 style="text-align: center; padding-top: 15vh; padding-left: 5vh;">20$</h2>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <footer id="footer">
+        <p style="text-align: center; margin-top: 7.5vh">© Mateusz Augustyniak s18531</p>
+    </footer>
+</section>
+</div>
+</body>
+</html>

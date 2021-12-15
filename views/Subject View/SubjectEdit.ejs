@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JAM - Subject Edit</title>
+    <link rel="stylesheet" href="/public/CSS/Generic.css">
+    <link rel="stylesheet" href="/public/CSS/Fonts.css">
+    <link rel="stylesheet" href="/public/CSS/Text.css">
+    <link rel="stylesheet" href="/public/CSS/Buttons.css">
+    <link rel="stylesheet" href="/public/CSS/SubjectsList.css">
+    <link rel="stylesheet" href="/public/CSS/LoginLayout.css">
+    <script type="application/javascript" src="/public/JS/validationCommon.js"></script>
+    <script type="application/javascript" src="/public/JS/validationSubject.js"></script>
+</head>
+<body>
+<%-include('../fragments/header')%>
+<section id="content">
+    <div class="content">
+        <h2>Subjects</h2>
+
+        <div class="subjectListContainer" style="width: 150vh; height: auto; margin-left: 25vh; padding: 3vh">
+            <div class="subjectListMerger" style="width: 150vh; height: auto; min-height: 100vh; overflow-x: hidden; overflow-y: scroll">
+                <form class="subjectAddForm" novalidate onsubmit="return validateSubjectForm();">
+                    <label class="LoginLabel" style="color: black" for="name">Name</label>
+                    <p></p>
+                    <input type="text" class="TextField" name="name" id="name" value="English">
+                    <p></p>
+                    <span id="nameError"></span>
+                    <p></p>
+                    <label class="LoginLabel" style="color: black;" for="shortName">Short name</label>
+                    <p></p>
+                    <input type="text" class="TextField" name="shortName" id="shortName" value ="ENG" maxlength="3">
+                    <p></p>
+                    <span id="shortNameError"></span>
+                    <label class="LoginLabel" for="Price" style="color: black;">Price</label>
+                    <p></p>
+                    <input type="number" class="TextField" name="Price" id="Price" value="60">
+                    <p></p>
+                    <span id="PriceError"></span>
+                    <p></p>
+                    <label class="LoginLabel" for="Availibility" style="color: black;">Availability</label>
+                    <p></p>
+                    <select class="SelectField" name="Availibility" id="Availibility">
+                        <option>Available</option>
+                        <option value="1">Available</option>
+                        <option value="2">Unavailable</option>
+                    </select>
+                    <p></p>
+                    <span id="AvailibilityError"></span>
+                    <p></p>
+                    <label class="LoginLabel" for="lecturer" style="color: black;">Lecturer</label>
+                    <p></p>
+                    <input class="TextField" id="lecturer" name="lecturer" value="Anna Angielska">
+                    <p></p>
+                    <span id="lecturerError"></span>
+                    <p></p>
+                    <span id="generalError"></span>
+                    <p></p>
+                    <ul style="list-style-type: none; position: relative; top: 15vh; left: 50vh">
+                        <li>
+                            <input type="submit" class="loginButton" style="float: left; display: table; margin: 15px;">
+                        </li>
+                        <li>
+                            <a href="/subjects"><input type="button" class="loginButton" style="float: left; display: table; margin: 15px" value="Cancel"> </a>
+                        </li>
+                    </ul>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+</html>

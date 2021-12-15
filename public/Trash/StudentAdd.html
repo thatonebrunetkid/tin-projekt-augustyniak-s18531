@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JAM - Students Add</title>
+    <link rel="stylesheet" href="../CSS/Generic.css">
+    <link rel="stylesheet" href="../CSS/Fonts.css">
+    <link rel="stylesheet" href="../CSS/Text.css">
+    <link rel="stylesheet" href="../CSS/Buttons.css">
+    <link rel="stylesheet" href="../CSS/StudentsList.css">
+    <link rel="stylesheet" href="../CSS/LoginLayout.css">
+</head>
+<body>
+<nav>
+    <div id="banner">
+        <div class="upperBanner">
+            <img class="logo" src="../Assets/logo.ong.png" alt="Jam logo">
+            <button class="loginButton" onclick="window.location.href='Login.html'" style="left: 85%; top: -3px;">SIGN IN</button>
+        </div>
+    </div>
+    <div class="ButtonsBanner">
+        <div class="ButtonsBox">
+            <div class="ButtonsContainer">
+                <ul class="ButtonsList">
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../../views/index.ejs'"><b>Home</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button  class="navButton" onclick="window.location.href='../../views/Students View/Students.ejs'"><b>Students</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../../views/Grades/GradesList.ejs'"><b>Grades</b></button>
+                    </li>
+                    <li class="navButtonListContainer">
+                        <button class="navButton" onclick="window.location.href='../../views/Subject View/SubjectsList.ejs'"><b>Subjects</b></button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+<section id="content">
+    <div class="content">
+        <h2>Students</h2>
+
+
+        <div class="studentsListContainer" style="width: auto; height: auto; margin-left: 25vh; padding: 3vh; min-height: 100vh;">
+            <div class="studentsListMerger" style="width: auto; height: auto; min-height: 100vh; overflow-y: scroll; overflow-x: hidden">
+               <form class="LoginForm">
+                   <label class="LoginLabel" style="color: black" for="name">Name</label>
+                   <p></p>
+                   <input type="text" class="TextField" name="name" id="name" placeholder="Input name">
+                   <p></p>
+                   <span id="nameError"></span>
+                   <p></p>
+                   <label class="LoginLabel" style="color: black;" for="surname">Surname</label>
+                   <p></p>
+                   <input type="text" class="TextField" name="surname" id="surname" placeholder="Input surname">
+                   <p></p>
+                   <span id="surnameError"></span>
+                   <label class="LoginLabel" for="Adress" style="color: black;">Adress</label>
+                   <p></p>
+                   <input type="text" class="TextField" name="Adress" id="Adress" placeholder="Input Adress">
+                   <p></p>
+                   <span id="AdressError"></span>
+                   <p></p>
+                   <label class="LoginLabel" for="zipCode" style="color: black;">Zip Code</label>
+                   <p></p>
+                   <input type="text" name="zipCode" id="zipCode" placeholder="Input zip code" class="TextField">
+                   <p></p>
+                   <span id="zipCodeError"></span>
+                   <p></p>
+                   <label class="LoginLabel" for="Birthdate" style="color: black;">Birthdate</label>
+                   <p></p>
+                   <input class="TextField" type="date" id="Birthdate" name="Birthdate">
+                   <p></p>
+                   <label class="LoginLabel" for="PESEL" style="color: black;">PESEL</label>
+                   <p></p>
+                   <input class="TextField" name="PESEL" id="PESEL" placeholder="Input PESEL" type="number" maxlength="11">
+                   <p></p>
+                   <span id="PESELERROR"></span>
+               </form>
+                <ul style="list-style-type: none; position: relative; top: 15vh; left: 50vh">
+                    <li>
+                        <button type="submit" class="loginButton" style="float: left; display: table; margin: 15px;" onclick="window.location.href='../../views/Students View/StudentError.ejs'">SUBMIT</button>
+                    </li>
+                    <li>
+                        <button onclick="window.location.href='../../views/Students View/Students.ejs'" class="loginButton" type="submit" style="float: left; display: table; margin: 15px">CANCEL</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>

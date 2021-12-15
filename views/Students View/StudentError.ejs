@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JAM - Students Error</title>
+    <link rel="stylesheet" href="../../public/CSS/Generic.css">
+    <link rel="stylesheet" href="../../public/CSS/Fonts.css">
+    <link rel="stylesheet" href="../../public/CSS/Text.css">
+    <link rel="stylesheet" href="../../public/CSS/Buttons.css">
+    <link rel="stylesheet" href="../../public/CSS/StudentsList.css">
+    <link rel="stylesheet" href="../../public/CSS/LoginLayout.css">
+    <link rel="stylesheet" href="../../public/CSS/errors.css">
+    <script type="application/javascript" src="../../public/JS/validationStudentForm.js"></script>
+    <script type="application/javascript" src="../../public/JS/validationCommon.js"></script>
+</head>
+<body>
+<%- include('../fragments/header.ejs')%>
+<section id="content">
+    <div class="content">
+        <h2>Students</h2>
+
+
+        <div class="studentsListContainer" style="width: auto; height: auto; min-height: 130vh; margin-left: 25vh; padding: 3vh">
+            <div class="studentsListMerger" style="width: auto; height: auto; min-height: 130vh; overflow-x: hidden; overflow-y: scroll">
+                <form class="studentAddForm" novalidate onsubmit="return validateStudentForm();">
+                    <label class="LoginLabel" style="color: black" for="name">Name</label>
+                    <p></p>
+                    <input type="text" class="TextField" name="name" id="name" placeholder="Input name">
+                    <p></p>
+                    <span id="nameError"></span>
+                    <p></p>
+                    <label class="LoginLabel" style="color: black;" for="surname">Surname</label>
+                    <p></p>
+                    <input type="text" class="TextField" name="surname" id="surname" placeholder="Input surname">
+                    <p></p>
+                    <span id="surnameError"></span>
+                    <p></p>
+                    <label class="LoginLabel" for="Adress" style="color: black;">Adress</label>
+                    <p></p>
+                    <input type="text" class="TextField" name="Adress" id="Adress" placeholder="Input Adress: Street house + m + flat">
+                    <p></p>
+                    <span id="AdressError"></span>
+                    <p></p>
+                    <label class="LoginLabel" for="zipCode" style="color: black;">Zip Code</label>
+                    <p></p>
+                    <input type="text" name="zipCode" id="zipCode" placeholder="Input zip code" class="TextField">
+                    <p></p>
+                    <span id="zipCodeError"></span>
+                    <p></p>
+                    <label class="LoginLabel" for="Birthdate" style="color: black;">Birthdate</label>
+                    <p></p>
+                    <input class="TextField" type="date" id="Birthdate" name="Birthdate">
+                    <p></p>
+                    <span id="BirthdateError"></span>
+                    <p></p>
+                    <label class="LoginLabel" for="PESEL" style="color: black;">PESEL</label>
+                    <p></p>
+                    <input class="TextField" type="number" id="PESEL" name="PESEL">
+                    <p></p>
+                    <span id="PESELError"></span>
+                    <p></p>
+                    <span id="ErrorSummary"></span>
+                    <ul style="list-style-type: none; position: relative; top: 15vh; left: 50vh">
+                        <li>
+                            <input type="submit" class="loginButton"
+                                   style="float: left; display: table; margin: 15px;"/>
+                        </li>
+                        <li>
+                            <a href="/students"><input type="button" class="loginButton" style="float: left; display: table; margin: 15px" value="Cancel"></a>
+                        </li>
+                    </ul>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</section>
