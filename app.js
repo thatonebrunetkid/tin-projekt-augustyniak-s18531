@@ -16,6 +16,15 @@ app.use('/grades', gradesRouter);
 const subjectRouter = require('./routes/subjectsRoute');
 app.use('/subjects', subjectRouter);
 
+const sequelizeInit = require('./config/sequelize/init');
+sequelizeInit()
+    .catch(err => {
+      console.log(err);
+    });
+
+const subjectApiRouter = require('./routes/API/subjectAPIRoute');
+app.use('/api/subject', subjectApiRouter);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
