@@ -7,14 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 
 var app = express();
-const studentRouter = require('./routes/studentRoute');
-app.use('/students', studentRouter);
 
-const gradesRouter = require('./routes/gradesRoute');
-app.use('/grades', gradesRouter);
-
-const subjectRouter = require('./routes/subjectsRoute');
-app.use('/subjects', subjectRouter);
 
 const sequelizeInit = require('./config/sequelize/init');
 sequelizeInit()
@@ -22,8 +15,7 @@ sequelizeInit()
       console.log(err);
     });
 
-const subjectApiRouter = require('./routes/API/subjectAPIRoute');
-app.use('/api/subject', subjectApiRouter);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +30,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/public', express.static(__dirname + "/public"));
 app.use('/views', express.static(__dirname + "/views"));
+
+const studentRouter = require('./routes/studentRoute');
+app.use('/students', studentRouter);
+
+const gradesRouter = require('./routes/gradesRoute');
+app.use('/grades', gradesRouter);
+
+const subjectRouter = require('./routes/subjectsRoute');
+app.use('/subjects', subjectRouter);
+
+const subjectApiRouter = require('./routes/API/subjectAPIRoute');
+app.use('/api/subject', subjectApiRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -53,5 +57,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;
