@@ -47,7 +47,7 @@
 
         <div class="subjectListContainer" style="width: 150vh; height: auto; min-height: 100vh; margin-left: 25vh; padding: 3vh">
             <div class="subjectListMerger" style="width: 150vh; height: auto; min-height: 100vh; overflow-y: scroll; overflow-x: hidden">
-                <form class="LoginForm">
+                <form class="LoginForm" method="post" action="<%=formAction%>" novalidate onsubmit="return ">
                     <label class="LoginLabel" style="color: black" for="name">Name</label>
                     <p></p>
                     <input type="text" class="TextField" name="name" id="name" placeholder="Input name">

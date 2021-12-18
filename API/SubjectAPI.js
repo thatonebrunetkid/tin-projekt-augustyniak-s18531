@@ -9,19 +9,17 @@ exports.getSubjects = (req, res, next) =>
         })
         .catch(err => {
             console.log(err);
-            res.status(500).json({
-                message: 'Internal server error'
-            })
         });
 };
 
 exports.getSubjectById = (req, res, next) => {
-    const subjectId = req.params.subId;
-    SubjectRepository.getSubjectById(subjectId)
+    const subId = req.params.subId;
+    console.log(req.params);
+    SubjectRepository.getSubjectById(subId)
         .then(subject => {
             if(!subject) {
                 res.status(404).json({
-                    message: 'Subject not found'
+                    message: 'Subject not found, id:' + subId
                 })
             } else {
                 res.status(200).json(subject);
@@ -37,17 +35,16 @@ exports.createSubject = (req, res, next) => {
         .catch(err => {
             if(!err.statusCode) {
                 err.statusCode = 500;
-
             }
-            console.log(req.body)
-            next(err);});
+            next(err);
+        });
 };
 
 exports.updateSubject = (req, res, next) => {
-    const subjectId = req.params.subId;
-    SubjectRepository.updateSubject(subjectId, req.body)
+    const subId = req.params.subId;
+    SubjectRepository.updateSubject(subId, req.body)
         .then(result => {
-            res.status(200).json({message: 'Subject affected', sub: result});
+            res.status(200).json({message: 'Subject affected', subject: result});
         })
         .catch(err => {
             if(!err.statusCode) {
@@ -58,10 +55,10 @@ exports.updateSubject = (req, res, next) => {
 };
 
 exports.deleteSubject = (req, res, next) => {
-    const subjectId = req.params.subId;
-    SubjectRepository.deleteSubject(subjectId)
+    const subId = req.params.subId;
+    SubjectRepository.deleteSubject(subId)
         .then(result => {
-            res.status(200).json({message: 'Subject affected', sub: result});
+            res.status(200).json({message: 'Subject affected', subject: result});
     })
         .catch(err => {
             if(!err.statusCode)

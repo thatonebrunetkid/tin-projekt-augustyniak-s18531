@@ -27,86 +27,35 @@
                             <th>Zip code</th>
                             <th>Birthdate</th>
                             <th>PESEL</th>
-                            <th>Grades avarage</th>
                             <th></th>
                         </tr>
                         </thead>
                         <tbody>
+                        <% for(let student of students) {%>
                         <tr>
-                                <td>Jan</td>
-                                <td>Kowalski</td>
-                                <td>Warszawska 13</td>
-                                <td>02-654</td>
-                                <td>25.10.1995</td>
-                                <td>95102567854</td>
-                                <td>3.14</td>
+                                <td><%= student.Name %></td>
+                                <td><%= student.Surname %></td>
+                                <td><%= student.Adress%></td>
+                                <td><%= student.ZipCode%></td>
+                                <td><%= student.BirthDate.toISOString().split('T')[0]%></td>
+                                <td><%= student.PESEL%></td>
                             <td>
                             <ul style="list-style-type: none">
                                 <li>
-                                    <a href="/students/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button></a>
+                                    <a href="/students/edit/<%=student._id%>"><button class="loginButton" style="margin-bottom: 5px">Edit</button></a>
                                 </li>
                                 <li>
-                                    <button class="loginButton" style="margin-bottom: 5px">Delete</button>
+                                    <a href="/students/delete/<%=student._id%>"><button class="loginButton" style="margin-bottom: 5px">Delete</button></a>
                                 </li>
                                 <li>
-                                    <a href="/students/details/1"><button class="loginButton">Details</button></a>
+                                    <a href="/students/details/<%=student._id%>"><button class="loginButton">Details</button></a>
                                 </li>
                             </ul>
                         </td>
                         </tr>
-                        </tbody>
-                        <tbody>
-                        <tr>
-                        <td>Adam</td>
-                        <td>Nowak</td>
-                        <td>Anielska 40</td>
-                        <td>04-234</td>
-                        <td>22.03.1999</td>
-                        <td>99032209176</td>
-                        <td>5.0</td>
-                        <td>
-                            <ul style="list-style-type: none">
-                                <li>
-                                    <a href="/students/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button></a>
-                                </li>
-                                <li>
-                                    <button class="loginButton" style="margin-bottom: 5px">Delete</button>
-                                </li>
-                                <li>
-                                    <a href="/students/details/1"><button class="loginButton">Details</button></a>
-                                </li>
-                            </ul>
-                        </td>
-                        </tr>
-                        </tbody>
-                        <tbody>
-                        <tr>
-                        <td>Amelia</td>
-                        <td>Potulska</td>
-                        <td>Świętokrzyska 23/45</td>
-                        <td>12-876</td>
-                        <td>20.01.2000</td>
-                        <td>000120654327</td>
-                        <td>4.18</td>
-                        <td>
-                            <ul style="list-style-type: none">
-                                <li>
-                                    <a href="/students/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button></a>
-                                </li>
-                                <li>
-                                    <button class="loginButton" style="margin-bottom: 5px">Delete</button>
-                                </li>
-                                <li>
-                                    <a href="/students/details/1"><button class="loginButton">Details</button></a>
-                                </li>
-                            </ul>
-                        </td>
-                        </tr>
-                        </tbody>
-
-
+                        <% } %>
                     </table>
-                <a href="/students/addStudent"><button class="loginButton" style="margin-left: 45%; margin-top: 5px; margin-bottom: 5px">Add New Student</button> </a>
+                <a href="/students/add"><button class="loginButton" style="margin-left: 45%; margin-top: 5px; margin-bottom: 5px">Add New Student</button> </a>
             </div>
     </div>
 </section>

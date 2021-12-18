@@ -20,8 +20,10 @@ exports.getGrades = () => {
     });
 };
 
-exports.getGradeById = (gradeId) => {
-    return Grades.findByPk(gradeId, {include: [
+exports.getGradeById = (grdId) => {
+    return Grades.findByPk(grdId,
+        {
+            include: [
             {
                 model: Student,
                 as: 'student'
@@ -40,17 +42,21 @@ exports.createGrade = (data) => {
         Grade: data.Grade,
         Date: data.Date,
         Comment: data.Comment,
-        Subject_id: data.Subject_id,
-        Student_id: data.Student_id
+        sub_id: data.sub_id,
+        std_id: data.std_id
     });
 };
 
-exports.updateGrade = (gradeId, data) => {
-    return Grades.update(data, {where: {_id: gradeId}});
+exports.updateGrade = (grdId, data) => {
+    return Grades.update(data, {where: {_id: grdId}});
 }
 
-exports.deleteGrade = (gradeId) => {
+exports.deleteGrade = (grdId) => {
     return Grades.destroy({
-        where: {_id: gradeId}
+        where: {_id: grdId}
     });
+}
+
+exports.deleteManyGrades = (grdId) => {
+    return Grades.find({_id: {[Sequelize.Op.in] : grdId}})
 }

@@ -22,22 +22,26 @@
 
     <div class="subjectListContainer" style="width: 150vh; height: auto; min-height: 120vh; margin-left: 25vh; padding: 3vh">
       <div class="subjectListMerger" style="width: 150vh; height: auto; min-height: 120vh; overflow-x: hidden; overflow-y: scroll">
-        <form class="subjectAddForm" novalidate onsubmit="return validateSubjectForm();">
+        <form class="subjectAddForm" method="post" action="<%=formAction%>" novalidate onsubmit="return validateSubjectForm();">
+          <input type="hidden" name="_id" value="<%=sbj._id%>">
           <label class="LoginLabel" style="color: black" for="name">Name</label>
           <p></p>
-          <input type="text" class="TextField" name="name" id="name" placeholder="Input name">
+          <input type="text" class="TextField" name="name" id="name" placeholder="Input name" value="<%= sbj.Name%>"
+          <%= (formMode === 'showDetails') ? 'disabled' : '' %>/>
           <p></p>
           <span id="nameError"></span>
           <p></p>
           <label class="LoginLabel" style="color: black;" for="shortName">Short name</label>
           <p></p>
-          <input type="text" class="TextField" name="shortName" id="shortName" placeholder="Input shortName" maxlength="3">
+          <input type="text" class="TextField" name="shortName" id="shortName" placeholder="Input shortName" maxlength="3" value="<%= sbj.ShortName%>"
+          <%= (formMode === 'showDetails') ? 'disabled' : '' %>/>
           <p></p>
           <span id="shortNameError"></span>
           <p></p>
           <label class="LoginLabel" for="Price" style="color: black;">Price</label>
           <p></p>
-          <input type="number" class="TextField" name="Price" id="Price" placeholder="Input price">
+          <input type="number" class="TextField" name="Price" id="Price" placeholder="Input price" value="<%= sbj.Price%>"
+          <%= (formMode === 'showDetails') ? 'disabled' : ''%>/>
           <p></p>
           <span id="PriceError"></span>
           <p></p>
@@ -53,7 +57,8 @@
           <p></p>
           <label class="LoginLabel" for="lecturer" style="color: black">Lecturer</label>
           <p></p>
-          <input class="TextField" id="lecturer" name="lecturer" type="text">
+          <input class="TextField" id="lecturer" name="lecturer" type="text" value="<%= sbj.Lecturer%>"
+          <%= (formMode === 'showDetails') ? 'disabled' : ''%>/>
 
           <p></p>
           <span id="lecturerError"></span>
@@ -66,6 +71,11 @@
             <li>
               <a href="/subjects"><input type="button" class="loginButton" style="float: left; display: table; margin: 15px" value="Cancel"> </a>
             </li>
+            <% if (formMode === 'showDetails') {%>
+            <li>
+              <a href="/subjects/details/edit/<%= sbj._id%>" class="loginButton">Edit</a>
+            </li>
+            <%}%>
           </ul>
         </form>
 

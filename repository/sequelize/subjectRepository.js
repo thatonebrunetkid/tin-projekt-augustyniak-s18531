@@ -6,8 +6,8 @@ exports.getSubjects = () => {
     return Subject.findAll();
 };
 
-exports.getSubjectById = (subjectId) => {
-    return Subject.findByPk(subjectId,
+exports.getSubjectById = (subId) => {
+    return Subject.findByPk(subId,
         {
             include: [{
                 model: Grades,
@@ -30,17 +30,17 @@ exports.createSubject = (newSubjectData) => {
     });
 };
 
-exports.updateSubject = (subjectId, subjectData) => {
+exports.updateSubject = (subId, subjectData) => {
     const Name = subjectData.Name;
     const ShortName = subjectData.ShortName;
     const Price = subjectData.Price;
     const Opened = subjectData.Opened;
     const Lecturer = subjectData.Lecturer;
-    return Subject.update(subjectData, {where: {_id: subjectId}});
+    return Subject.update(subjectData, {where: {_id: subId}});
 };
 
-exports.deleteSubject = (subjectId) =>{
+exports.deleteSubject = (subId) =>{
     return Subject.destroy({
-        where: {_id: subjectId}
+        where: {_id: subId}
     });
 };

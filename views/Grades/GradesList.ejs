@@ -32,146 +32,35 @@
                 </tr>
                 </thead>
                 <tbody>
+                <% for(let grade of grades) {%>
                 <tr>
-                    <td>Jan Kowalski</td>
-                    <td>
-                        <square class="sqaure" style="background-color: red">1</square>
-                    </td>
-                    <td>Kolokwium 1</td>
-                    <td>English</td>
+                    <td><%= grade.student.Name + ' ' + grade.student.Surname%></td>
+                    <td><square class="sqaure"
+                        <% if(grade.Grade.toString().split('.')[0] === '1' || grade.Grade.toString().split('.')[0] === '2'){%> style="background-color: red" <%} else if (grade.Grade.toString().split('.')[0] === '3' || grade.Grade.toString().split('.')[0] === '4') {%>
+                                style="background-color: yellow" <%} else {%> style="background-color: yellowgreen" <%}%>>
+                            <%= grade.Grade.toString().split('.')[0]%></square></td>
+                    <td><%= grade.Date.toISOString().split('T')[0] %></td>
+                    <td><%= grade.Comment%></td>
+                    <td><%= grade.subject.Name%></td>
                     <td>
                         <ul style="list-style-type: none">
                             <li>
-                                <a href="/grades/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
+                                <a href="/grades/edit/<%=grade._id%>"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
                             </li>
                             <li>
                                 <button class="loginButton" style="margin-bottom: 5px">Delete</button>
                             </li>
                             <li>
-                                <a href="/grades/details/1"><button class="loginButton" style="margin-bottom: 5px">Details</button> </a>
+                                <a href="/grades/details/<%= grade._id%>"><button class="loginButton" style="margin-bottom: 5px">Details</button> </a>
                             </li>
                         </ul>
                     </td>
                 </tr>
                 </tbody>
-                <tbody>
-                <tr>
-                    <td>Jan Kowalski</td>
-                    <td>
-                        <square class="sqaure" style="background-color: red">2</square>
-                    </td>
-                    <td>Egzamin 1</td>
-                    <td>Russian</td>
-                    <td>
-                        <ul style="list-style-type: none">
-                            <li>
-                                <a href="/grades/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
-                            </li>
-                            <li>
-                                <button class="loginButton" style="margin-bottom: 2vh">Delete</button>
-                            </li>
-                            <li>
-                                <button class="loginButton" style="margin-bottom: 2vh" onclick="window.location.href='/GradeDetail.html'">Details</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                </tbody>
-                <tbody>
-                <tr>
-                    <td>Jan Kowalski</td>
-                    <td>
-                        <square class="sqaure" style="background-color: yellow">3</square>
-                    </td>
-                    <td>Kolokwium 2</td>
-                    <td>Japaneese</td>
-                    <td>
-                        <ul style="list-style-type: none">
-                            <li>
-                                <a href="/grades/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
-                            </li>
-                            <li>
-                                <button class="loginButton" style="margin-bottom: 2vh">Delete</button>
-                            </li>
-                            <li>
-                                <button class="loginButton" style="margin-bottom: 2vh" onclick="window.location.href='/GradeDetail.html'">Details</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                </tbody>
-                <tbody>
-                <tr>
-                    <td>Jan Kowalski</td>
-                    <td>
-                        <square class="sqaure" style="background-color: yellow">4</square>
-                    </td>
-                    <td>Egzamin 2</td>
-                    <td>English</td>
-                    <td>
-                        <ul style="list-style-type: none">
-                            <li>
-                                <a href="/grades/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
-                            </li>
-                            <li>
-                                <button class="loginButton" style="margin-bottom: 2vh">Delete</button>
-                            </li>
-                            <li>
-                                <button class="loginButton" style="margin-bottom: 2vh" onclick="window.location.href='/GradeDetail.html'">Details</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                </tbody>
-                <tbody>
-                <tr>
-                    <td>Jan Kowalski</td>
-                    <td>
-                        <square class="sqaure" style="background-color: greenyellow">5</square>
-                    </td>
-                   <td>Kolokwium 3</td>
-                    <td>English</td>
-                    <td>
-                        <ul style="list-style-type: none">
-                            <li>
-                                <a href="/grades/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
-                            </li>
-                            <li>
-                                <button class="loginButton" style="margin-bottom: 2vh">Delete</button>
-                            </li>
-                            <li>
-                                <button class="loginButton" style="margin-bottom: 2vh" onclick="window.location.href='/GradeDetail.html'">Details</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                </tbody>
-                <tbody>
-                <tr>
-                    <td>Jan Kowalski</td>
-                    <td>
-                        <square class="sqaure" style="background-color: greenyellow">6</square>
-                    </td>
-                    <td>Egzamin 3</td>
-                    <td>Portugal</td>
-                    <td>
-                        <ul style="list-style-type: none">
-                            <li>
-                                <a href="/grades/details/edit/1"><button class="loginButton" style="margin-bottom: 5px">Edit</button> </a>
-                            </li>
-                            <li>
-                                <button class="loginButton" style="margin-bottom: 2vh">Delete</button>
-                            </li>
-                            <li>
-                                <button class="loginButton" style="margin-bottom: 2vh" onclick="window.location.href='/GradeDetail.html'">Details</button>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-                </tbody>
+                <%}%>
             </table>
 
-            <a href="/grades/addGrade"><button class="loginButton" style="margin: 1vh; align-items: center; left: 45%">Add Grade</button></a>
+            <a href="/grades/add"><button class="loginButton" style="margin: 1vh; align-items: center; left: 45%">Add Grade</button></a>
         </div>
 
     </div>

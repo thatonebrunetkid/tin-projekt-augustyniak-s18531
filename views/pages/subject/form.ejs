@@ -1,0 +1,88 @@
+<main>
+    <script type="application/javascript" src="../../../public/JS/validationSubject.js"></script>
+    <script type="application/javascript" src="../../../public/JS/validationCommon.js"></script>
+    <link rel="stylesheet" href="/public/CSS/Generic.css">
+    <link rel="stylesheet" href="/public/CSS/Fonts.css">
+    <link rel="stylesheet" href="/public/CSS/Text.css">
+    <link rel="stylesheet" href="/public/CSS/Buttons.css">
+    <link rel="stylesheet" href="/public/CSS/SubjectsList.css">
+    <link rel="stylesheet" href="/public/CSS/LoginLayout.css">
+    <link rel="stylesheet" href="/public/CSS/GradesList.css">
+    <%-include('../../fragments/header')%>
+    <h2><%= pageTitle%></h2>
+
+    <div class="subjectListContainer" style="width: auto; height: 80vh; max-height: 400vh; margin-left: 25vh; padding: 3vh; display: flex">
+        <div class="subjectListMerger" style="width: 100%; height: auto; display: flex; overflow-x: scroll">
+            <form class="LoginForm" style="width: 80%;" method="post" action="<%=formAction%>" novalidate onsubmit="return validateSubjectForm();">
+                <input type="hidden" name="_id" value="<%= subject._id%>">
+                <input class="TextField" type="text" name="Name" id="name" placeholder="Input name" value="<%= subject.Name%>"
+                        <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+                <p></p>
+                <span id="nameError"></span>
+                <p></p>
+                <input class="TextField" type="text" name="ShortName" id="shortName" placeholder="Input short name" value="<%= subject.ShortName%>"
+                        <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+                <p></p>
+                <span id="shortNameError"></span>
+                <p></p>
+                <input class="TextField" type="number" name="Price" id="Price" placeholder="Input price" value="<%= subject.Price%>"
+                        <%= (formMode == 'showDetails') ? 'disabled' : ''%> />
+                <p></p>
+                <span id="PriceError"></span>
+                <p></p>
+                <select id="Availibility" name="Opened" class="SelectField" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> >
+                    <option value="<%= subject.Opened%>" selected><% if(subject.Opened == true) {%>Available<%} else {%> Unavailable <%}%></option>
+                    <option value="true">Available</option>
+                    <option value="false">Unavailable</option>
+                </select>
+                <p></p>
+                <span id="AvailibilityError"></span>
+                <p></p>
+                <input class="TextField" type="text" name="Lecturer" id="lecturer" placeholder="Input lecturer" value="<%= subject.Lecturer%>"
+                        <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+                <p></p>
+                <span id="lecturerError"></span>
+                <% if (formMode == 'showDetails' || formMode == 'edit') {%>
+                    <table class="gradesTable">
+                        <thead>
+                        <tr>
+                            <th>Grade</th>
+                            <th>Date</th>
+                            <th>comment</th>
+                            <th>Student Name</th>
+                            <th>Student PESEL</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% for(let e of subject.grades) {%>
+                            <tr>
+                                <td><square class="sqaure"
+                                    <% if(e.Grade.toString().split('.')[0] === '1' || e.Grade.toString().split('.')[0] === '2'){%> style="background-color: red" <%} else if (e.Grade.toString().split('.')[0] === '3' || e.Grade.toString().split('.')[0] === '4') {%>
+                                        style="background-color: yellow" <%} else {%> style="background-color: yellowgreen" <%}%>>
+                                        <%= e.Grade.toString().split('.')[0]%></square></td>
+                                <td><%= e.Date.toISOString().split('T')[0] %></td>
+                                <td><%= e.Comment%></td>
+                                <td><a href="/students/details/<%= e.student._id %>"><%= e.student.Surname%></a></td>
+                                <td><%= e.student.PESEL%></td>
+                            </tr>
+                        <%}%>
+                        </tbody>
+                    </table>
+                   <%}%>
+                <div class="form-buttons" style="left: 45%">
+                    <span id="generalError"></span>
+                    <p></p>
+                    <% if(formMode != 'showDetails') {%>
+                    <input class="loginButton" type="submit" value="<%=btnLabel%>" />
+                    <a class="loginButton" href="/subjects">Cancel</a>
+                    <%} else {%>
+                        <a class="loginButton" href="/subjects">Back</a>
+                    <%}%>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+</main>

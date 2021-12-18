@@ -6,8 +6,8 @@ exports.getStudents = () => {
     return Student.findAll();
 };
 
-exports.getStudentById = (studentId) => {
-    return Student.findByPk(studentId,
+exports.getStudentById = (stdId) => {
+    return Student.findByPk(stdId,
         {
             include: [{
                 model:Grades,
@@ -31,18 +31,18 @@ exports.createStudent = (newStudentData) => {
     });
 };
 
-exports.updateStudent = (studentId, studentData) => {
+exports.updateStudent = (stdId, studentData) => {
     const Name = studentData.Name;
     const Surname = studentData.Surname;
     const Adress = studentData.Adress;
     const ZipCode = studentData.ZipCode;
     const BirthDate = studentData.BirthDate;
     const PESEL = studentData.PESEL;
-    return Student.update(studentData, {where: {_id: studentId}});
+    return Student.update(studentData, {where: {_id: stdId}});
 };
 
-exports.deleteStudent = (studentId) => {
+exports.deleteStudent = (stdId) => {
     return Student.destroy({
-        where: {_id: studentId}
+        where: {_id: stdId}
     });
 };

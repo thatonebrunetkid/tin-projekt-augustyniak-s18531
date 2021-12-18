@@ -12,6 +12,7 @@ const Subject = sequelize.define('Subject', {
     Name:{
         type: Sequelize.STRING(10),
         allowNull: false,
+
     },
 
     ShortName:{

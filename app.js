@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
 var indexRouter = require('./routes/index');
 
 var app = express();
@@ -31,6 +32,7 @@ app.use('/', indexRouter);
 app.use('/public', express.static(__dirname + "/public"));
 app.use('/views', express.static(__dirname + "/views"));
 
+
 const studentRouter = require('./routes/studentRoute');
 app.use('/students', studentRouter);
 
@@ -42,11 +44,20 @@ app.use('/subjects', subjectRouter);
 
 const subjectApiRouter = require('./routes/API/subjectAPIRoute');
 app.use('/api/subject', subjectApiRouter);
+
+const studentApiRouter = require('./routes/API/studentAPIRoute');
+app.use('/api/student', studentApiRouter);
+
+const gradesApiRouter = require('./routes/API/gardeAPIRoute');
+app.use('/api/grades', gradesApiRouter);
+
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

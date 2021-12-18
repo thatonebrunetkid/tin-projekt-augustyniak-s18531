@@ -17,21 +17,23 @@ const Grades = sequelize.define('Grades', {
     Date:{
         type: Sequelize.DATE,
         allowNull: false,
+
     },
 
     Comment: {
         type: Sequelize.STRING(50),
         allowNull: true,
+
     },
 
-    Subject_id: {
+    sub_id: {
         type: Sequelize.INTEGER,
         autoIncrement: false,
         allowNull: false,
         primaryKey: false,
     },
 
-    Student_id: {
+    std_id: {
         type: Sequelize.INTEGER,
         autoIncrement: false,
         allowNull: false,

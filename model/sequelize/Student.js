@@ -11,32 +11,32 @@ const Student = sequelize.define('Student', {
 
     Name: {
         type: Sequelize.STRING(15),
-        allowNull: false,
+        allowNull: false
     },
 
     Surname: {
         type: Sequelize.STRING(30),
-        allowNull: false,
+        allowNull: false
     },
 
     Adress: {
       type: Sequelize.STRING(50),
-      allowNull: false,
+      allowNull: false
     },
 
     ZipCode: {
         type: Sequelize.STRING(10),
-        allowNull: false,
+        allowNull: false
     },
 
     BirthDate: {
         type: Sequelize.DATE,
-        allowNull: false,
+        allowNull: false
     },
 
     PESEL: {
         type: Sequelize.STRING(11),
-        allowNull: false,
+        allowNull: false
     },
 
 });

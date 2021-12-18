@@ -1,0 +1,79 @@
+<main>
+    <script type="application/javascript" src="../../../public/JS/validationGradesForm.js"></script>
+    <script type="application/javascript" src="../../../public/JS/validationCommon.js"></script>
+    <link rel="stylesheet" href="/public/CSS/Generic.css">
+    <link rel="stylesheet" href="/public/CSS/Fonts.css">
+    <link rel="stylesheet" href="/public/CSS/Text.css">
+    <link rel="stylesheet" href="/public/CSS/Buttons.css">
+    <link rel="stylesheet" href="/public/CSS/SubjectsList.css">
+    <link rel="stylesheet" href="/public/CSS/LoginLayout.css">
+    <link rel="stylesheet" href="/public/CSS/GradesList.css">
+    <%-include('../../fragments/header')%>
+    <h2><%= pageTitle%></h2>
+
+    <div class="subjectListContainer" style="width: auto; height: 100vh; max-height: 400vh; margin-left: 25vh; padding: 3vh; display: flex">
+        <div class="subjectListMerger" style="width: 100%; height: auto; display: flex">
+            <form class="LoginForm" style="width: 100%" method="post" action="<%= formAction%>" novalidate onsubmit="return validateGradesForm();">
+
+                <input type="hidden" name="_id" value="<%= grades._id%>">
+                <p></p>
+                <input class="TextField" type="number" name="Grade" id="grade" placeholder="Input grade" value="<%= grades.Grade%>"
+
+                        <%= (formMode == 'showDetails') ? 'disabled' : ''%> />
+                <p></p>
+                <span id="gradeError"></span>
+                <p></p>
+
+                <input class="TextField" type="date" name="Date" id="date" placeholder="Input Date"
+                <% if(formMode === 'showDetails' || formMode === 'edit') {%>
+                       value="<%= grades.Date.toISOString().split('T')[0]%>"
+                <%} else {%>
+                       value="<%= grades.Date%>"
+                        <%}%>
+                        <%= (formMode === 'showDetails') ? 'disabled' : '' %> />
+                <p></p>
+                <span id="dateError"></span>
+                <p></p>
+                <input class="TextField" type="text" name="Comment" id="comment" value="<%= grades.Comment%>"
+                        <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+                <p></p>
+                <span id="commentError"></span>
+                <p></p>
+
+                <select class="SelectField" id="student" name="std_id" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> >
+                    <option value="" selected>---Select Student---</option>
+                    <% for (let i=0; i<allStd.length; i++) { let std = allStd[i]; %>
+                    <option value="<%= std._id %>" label="<%= std.Name + ' ' + std.Surname + ' '+ std.PESEL%>"
+                            <%= (grades._id && std._id.toString() == grades.student._id.toString()) ? 'selected' : '' %>><%= std.Name + ' ' + std.Surname + ' '+ std.PESEL%></option>
+                    <%}%>
+                </select>
+                <p></p>
+                <span id="studentError"></span>
+
+                <select class="SelectField" id="subject" name="sub_id" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> >
+                    <option value="" selected>---Select Subject---</option>
+                    <% for (let i=0; i<allSbj.length; i++) { let sbj = allSbj[i]; %>
+
+                    <option value="<%= sbj._id %>" label="<%= sbj.Name%>"
+                            <%= (grades._id && sbj._id.toString() == grades.subject._id.toString()) ? 'selected' : '' %>><%= sbj.Name%></option>
+                    <%}%>
+                </select>
+                <p></p>
+                <span id="subjectError"></span>
+                <div class="form-buttons">
+                    <span id="errorSummary"></span>
+                    <p></p>
+                    <%if(formMode != 'showDetails') {%>
+                    <input class="loginButton" type="submit" value="<%=btnLabel%>" />
+                    <a class="loginButton" href="/grades">Cancel</a>
+                    <%} else {%>
+                        <a class="loginButton" href="/grades">Back</a>
+                    <%}%>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+</main>
