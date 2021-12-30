@@ -29,12 +29,7 @@ function validateSubjectForm()
         subjectNameError.innerText = "Nazwa nie moze byc dluzsza od 10 znakow"
     }
 
-    if(!checkRequired(shortNameInput.value))
-    {
-        valid = false;
-        shortNameInput.classList.add("error-input");
-        shortNameError.innerText = "Pole jest wymagane";
-    }else if(!checkTextLengthRange(shortNameInput.value, 3))
+   if(!checkTextLengthRange(shortNameInput.value, 3))
     {
         valid = false;
         shortNameInput.classList.add("error-input");

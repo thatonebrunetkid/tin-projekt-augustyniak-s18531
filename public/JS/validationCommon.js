@@ -1,13 +1,13 @@
-function resetErrors(inputs, errorTexts, errorInfo)
+function resetErrors(inputs, validationErrors, errorInfo)
 {
     for(let i=0; i<inputs.length; i++)
     {
         inputs[i].classList.remove("error-input");
     }
 
-    for(let i=0; i<errorTexts.length; i++)
+    for(let i=0; i<validationErrors.length; i++)
     {
-        errorTexts[i].innerText = "";
+        validationErrors[i].innerText = "";
     }
     errorInfo.innerText = "";
 }
@@ -29,9 +29,6 @@ function checkRequired(value)
 
 function checkTextLengthRange(value, max)
 {
-    if(!value){
-        return false;
-    }
 
     value = value.toString().trim();
     const length = value.length;
@@ -96,15 +93,24 @@ function checkAdress(value)
 
 function checkZipCode(value)
 {
-    const pattern = /(\d{2}-\d{3})/;
-
-    return pattern.test(value);
+    let test =  pattern = /(\d{2}-\d{3})/;
+    if(value.length != 6)
+    {
+        test = false;
+    }
+    return test;
 }
 
 function checkPesel(value)
 {
     const pattern = /(\d{11})/;
-    return pattern.test(value);
+    let test = pattern.test(value);
+    if(value.length != 11)
+    {
+        test = false;
+    }
+
+    return test;
 }
 
 function checkPrice(value)

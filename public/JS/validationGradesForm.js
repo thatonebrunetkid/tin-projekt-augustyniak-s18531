@@ -53,12 +53,7 @@ function validateGradesForm()
         dateValueError.innerText = "Podana data jest z przyszlosci!"
     }
 
-    if(!checkRequired(commentValueInput.value))
-    {
-        valid = false;
-        commentValueInput.classList.add("error-input");
-        commentValueError.innerText = "Pole jest wymagane";
-    }else if (!checkTextLengthRange(commentValueInput.value, 50))
+    if (!checkTextLengthRange(commentValueInput.value, 50))
     {
         valid = false;
         commentValueInput.classList.add("error-input");

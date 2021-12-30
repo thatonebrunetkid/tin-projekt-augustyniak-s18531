@@ -14,10 +14,10 @@ const Grades = sequelize.define('Grades', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
             isDecimal: {
-                msg: "Tylko liczby"
+                msg: "Only digits allowed"
             },
             min: 1,
             max: 5,
@@ -29,10 +29,10 @@ const Grades = sequelize.define('Grades', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
             isDate: {
-                msg: "To nie data"
+                msg: "Wrong data format"
             },
         }
 
@@ -42,12 +42,9 @@ const Grades = sequelize.define('Grades', {
         type: Sequelize.STRING(50),
         allowNull: true,
         validate: {
-            notEmpty: {
-                msg: "Pole wymagane"
-            },
             len: {
-                args: [1, 50],
-                msg: "Pole moze zawierac max 50 znakow"
+                args: [0, 50],
+                msg: "Maximum 50 signs"
             },
         }
 
@@ -58,6 +55,12 @@ const Grades = sequelize.define('Grades', {
         autoIncrement: false,
         allowNull: false,
         primaryKey: false,
+        validate: {
+            notEmpty: {
+                msg: "Field required"
+            },
+            not: 'Select option'
+        }
     },
 
     std_id: {
@@ -65,6 +68,12 @@ const Grades = sequelize.define('Grades', {
         autoIncrement: false,
         allowNull: false,
         primaryKey: false,
+        validate: {
+            notEmpty: {
+                msg: "Field required"
+            },
+            not: 'Select option'
+        }
     },
 });
 

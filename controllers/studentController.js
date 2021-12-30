@@ -18,7 +18,8 @@ exports.showAddStudentForm = (req, res, next) => {
         formMode: 'createNew',
         btnLabel: 'Add student',
         formAction: '/students/add',
-        navLocation: 'student'
+        navLocation: 'student',
+        validationErrors: []
     });
 }
 
@@ -32,7 +33,8 @@ exports.showStudentDetails = (req, res, next) =>
                formMode: 'showDetails',
                pageTitle: 'Student Details',
                formAction: '',
-               navLocation: 'student'
+               navLocation: 'student',
+               validationErrors: []
            });
        });
 }
@@ -48,7 +50,8 @@ exports.showStudentEdit = (req, res, next) =>
                 pageTitle: 'Edit Student',
                 btnLabel: 'Edit Student',
                 formAction: '/students/edit',
-                navLocation: 'student'
+                navLocation: 'student',
+                validationErrors: []
             });
         });
 };
@@ -60,7 +63,18 @@ exports.addStudent = (req, res, next) => {
     StudentRepository.createStudent(stdData)
         .then( result => {
             res.redirect('/students');
-        });
+        })
+        .catch(err => {
+            res.render('pages/student/form', {
+                student: stdData,
+                pageTitle: 'New student',
+                formMode: 'createNew',
+                btnLabel: 'Add student',
+                formAction: '/students/add',
+                navLocation: 'student',
+                validationErrors: err.errors
+            });
+        })
 };
 
 exports.updateStudent = (req, res, next) => {
@@ -71,7 +85,22 @@ exports.updateStudent = (req, res, next) => {
     StudentRepository.updateStudent(stdId, stdData)
         .then( result => {
             res.redirect('/students');
-        });
+        })
+        .catch(err => {
+            StudentRepository.getStudentById(stdId)
+                .then(student => {
+                    res.render('pages/student/form', {
+                        student: student,
+                        formMode: 'edit',
+                        pageTitle: 'Edit Student',
+                        btnLabel: 'Edit Student',
+                        formAction: '/students/edit',
+                        navLocation: 'student',
+                        validationErrors: err.errors
+                })
+            });
+            console.log('errerrerrerrerrerrerrr ' + err.errors)
+        })
 };
 
 exports.deleteStudent = (req, res, next) => {

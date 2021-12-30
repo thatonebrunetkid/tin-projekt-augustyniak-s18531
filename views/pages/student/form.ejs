@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/public/CSS/SubjectsList.css">
     <link rel="stylesheet" href="/public/CSS/LoginLayout.css">
     <link rel="stylesheet" href="/public/CSS/GradesList.css">
+    <link rel="stylesheet" href="/public/CSS/errors.css">
+    <title>Students</title>
     <%-include('../../fragments/header')%>
     <h2><%= pageTitle%></h2>
 
@@ -16,40 +18,76 @@
             <form class="LoginForm" style="width: 80%" method="post" action="<%= formAction%>" novalidate onsubmit="return validateStudentForm();">
                 <input type="hidden" name="Student_id" value="<%= student._id%>" />
                 <p></p>
-                <input class="TextField" type="text" name="Name" id="name" placeholder="Input Name" value="<%= student.Name%>"
+                <label class="LoginLabel">Name*</label>
+                <p></p>
+                <input class="TextField" style="border: <%= validationErrors.find(e => e.path.includes('Name')) ? '1px solid red' : ''%>" type="text" name="Name" id="name" placeholder="Input Name" value="<%= student.Name%>"
                         <%= (formMode === 'showDetails') ? 'disabled' : '' %> />
                 <p></p>
-                <span id="nameError"></span>
+                <span id="nameError">
+                    <% if(validationErrors.find(e => e.path.includes('Name'))) {%>
+                        <%= validationErrors.find(e => e.path.includes('Name')).message %>
+                    <%}%>
+                </span>
                 <p></p>
-                <input class="TextField" type="text" name="Surname" id="surname" placeholder="Input surname" value="<%= student.Surname%>"
+                <label class="LoginLabel">Surname*</label>
+                <p></p>
+                <input class="TextField" style="border: <%= validationErrors.find(e => e.path.includes('Surname')) ? '1px solid red' : ''%>" type="text" name="Surname" id="surname" placeholder="Input surname" value="<%= student.Surname%>"
                         <%= (formMode === 'showDetails') ? 'disabled' : '' %> />
                 <p></p>
-                <span id="surnameError"></span>
+                <span id="surnameError">
+                    <% if(validationErrors.find(e => e.path.includes('Surname'))) {%>
+                        <%= validationErrors.find(e => e.path.includes('Surname')).message %>
+                    <%}%>
+                </span>
                 <p></p>
-                <input class="TextField" type="text" name="Adress" id="Adress" placeholder="Input Address" value="<%= student.Adress%>"
+                <label class="LoginLabel">Address*</label>
+                <p></p>
+                <input class="TextField" style="border: <%= validationErrors.find(e => e.path.includes('Adress')) ? '1px solid red' : ''%>" type="text" name="Adress" id="Adress" placeholder="Input Address" value="<%= student.Adress%>"
                         <%= (formMode === 'showDetails') ? 'disabled' : '' %> />
                 <p></p>
-                <span id="AdressError"></span>
+                <span id="AdressError">
+                    <% if(validationErrors.find(e => e.path.includes('Adress'))) {%>
+                        <%= validationErrors.find(e => e.path.includes('Adress')).message %>
+                    <%}%>
+                </span>
                 <p></p>
-                <input class="TextField" type="text" name="ZipCode" id="zipCode" placeholder="Input zip code" value="<%= student.ZipCode%>"
+                <label class="LoginLabel">ZipCode*</label>
+                <p></p>
+                <input class="TextField" style="border: <%= validationErrors.find(e => e.path.includes('ZipCode')) ? '1px solid red' : ''%>" type="text" name="ZipCode" id="zipCode" placeholder="Input zip code" value="<%= student.ZipCode%>"
                         <%= (formMode === 'showDetails') ? 'disabled' : '' %> />
                 <p></p>
-                <span id="zipCodeError"></span>
+                <span id="zipCodeError">
+                    <% if(validationErrors.find(e => e.path.includes('ZipCode'))) {%>
+                        <%= validationErrors.find(e => e.path.includes('ZipCode')).message %>
+                    <%}%>
+                </span>
                 <p></p>
-                <input class="TextField" type="date" name="BirthDate" id="Birthdate" placeholder="Input Date of Birth"
+                <label class="LoginLabel">Birth Date*</label>
+                <p></p>
+                <input class="TextField" style="border: <%= validationErrors.find(e => e.path.includes('BirthDate')) ? '1px solid red' : ''%>" type="date" name="BirthDate" id="Birthdate" placeholder="Input Date of Birth"
                     <% if(formMode === 'showDetails' || formMode === 'edit') {%>
-                        value="<%= student.BirthDate.toISOString().split('T')[0]%>"
+                        value="<%= new Date(student.BirthDate).toISOString().split('T')[0]%>"
                             <%} else {%>
                                 value="<%= student.BirthDate%>"
                                     <%}%>
                         <%= (formMode === 'showDetails') ? 'disabled' : '' %> />
                 <p></p>
-                <span id="BirthdateError"></span>
+                <span id="BirthdateError">
+                    <% if(validationErrors.find(e => e.path.includes('BirthDate'))) {%>
+                        <%= validationErrors.find(e => e.path.includes('BirthDate')).message %>
+                    <%}%>
+                </span>
                 <p></p>
-                <input class="TextField" type="text" name="PESEL" id="PESEL" placeholder="Input PESEL" value="<%= student.PESEL%>"
+                <label class="LoginLabel">PESEL*</label>
+                <p></p>
+                <input class="TextField" style="border: <%= validationErrors.find(e => e.path.includes('PESEL')) ? '1px solid red' : ''%>" type="text" name="PESEL" id="PESEL" placeholder="Input PESEL" value="<%= student.PESEL%>"
                         <%= (formMode === 'showDetails') ? 'disabled' : '' %> />
                 <p></p>
-                <span id="PESELError"></span>
+                <span id="PESELError">
+                <% if(validationErrors.find(e => e.path.includes('PESEL'))) {%>
+                    <%= validationErrors.find(e => e.path.includes('PESEL')).message%>
+                    <%}%>
+                </span>
                 <p></p>
                 <% if (formMode === 'showDetails' || formMode === 'edit') {%>
                     <table class="gradesTable">
@@ -68,7 +106,7 @@
                                     <% if(grade.Grade.toString().split('.')[0] === '1' || grade.Grade.toString().split('.')[0] === '2'){%> style="background-color: red" <%} else if (grade.Grade.toString().split('.')[0] === '3' || grade.Grade.toString().split('.')[0] === '4') {%>
                                             style="background-color: yellow" <%} else {%> style="background-color: yellowgreen" <%}%>>
                                         <%= grade.Grade.toString().split('.')[0]%></square></td>
-                                <td><%= grade.Date.toISOString().split('T')[0] %></td>
+                                <td><%= new Date(grade.Date).toISOString().split('T')[0] %></td>
                                 <td><%= grade.Comment%></td>
                                 <td><a href="/subjects/details/<%= grade.subject._id %>"><%= grade.subject.Name%></a></td>
                             </tr>
@@ -81,7 +119,7 @@
                     <p></p>
                     <% if(formMode != 'showDetails') {%>
                     <input class="loginButton" type="submit" value="<%=btnLabel%>" />
-                    <a class="loginButton" href="/students">Cancel</a>
+                    <a class="loginButton" href="/students" style="text-decoration: none; text-align: center;">Cancel</a>
                     <%} else {%>
                         <a class="loginButton" href="/students">Back</a>
                     <%}%>

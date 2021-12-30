@@ -14,12 +14,13 @@ const Student = sequelize.define('Student', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
             len: {
                 args: [1, 15],
-                msg: "Pole moze zawierac max 15 znakow"
+                msg: "Maximum 15 signs"
             },
+            is: /[A-Z][a-z]+/
         }
     },
 
@@ -28,11 +29,11 @@ const Student = sequelize.define('Student', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
             len: {
                 args: [1, 30],
-                msg: "Pole moze zawierac max 30 znakow"
+                msg: "Maximum 30 signs"
             },
         }
     },
@@ -42,11 +43,11 @@ const Student = sequelize.define('Student', {
       allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
             len: {
                 args: [1, 50],
-                msg: "Pole moze zawierac max 50 znakow"
+                msg: "Maximum 50 signs"
             },
         }
     },
@@ -56,11 +57,11 @@ const Student = sequelize.define('Student', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
             len: {
                 args: [1, 10],
-                msg: "Pole moze zawierac max 10 znakow"
+                msg: "Maximum 10 signs"
             },
             is: /(\d{2}-\d{3})/,
         }
@@ -71,10 +72,10 @@ const Student = sequelize.define('Student', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
             isDate: {
-                msg: "To nie data"
+                msg: "Invalid date format"
             },
 
         }
@@ -86,14 +87,13 @@ const Student = sequelize.define('Student', {
         unique: true,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
             len: {
                 args: [1, 11],
-                msg: "Pole moze zawierac max 11 znakow"
+                msg: "Maximum 11 signs"
             },
             is: /(\d{11})/,
-
         }
     },
 

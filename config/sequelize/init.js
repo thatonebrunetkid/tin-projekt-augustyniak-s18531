@@ -52,28 +52,28 @@ module.exports = async () => {
                 return Subject.bulkCreate([
                     {
                         Name: 'English',
-                        ShortName: 'ENG',
+                        Shortname: 'ENG',
                         Price: 60.00,
                         Opened: true,
                         Lecturer: 'Anna Angielska'
                     },
                     {
                         Name: 'Russian',
-                        ShortName: 'RUS',
+                        Shortname: 'RUS',
                         Price: 75.00,
                         Opened: true,
                         Lecturer: 'Barbara Rosyjska'
                     },
                     {
                         Name: 'Spanish',
-                        ShortName: 'ESP',
+                        Shortname: 'ESP',
                         Price: 95.00,
                         Opened: true,
                         Lecturer: 'Andrzej Hiszpanski'
                     },
                     {
                         Name: 'Portugal',
-                        ShortName: 'PRT',
+                        Shortname: 'PRT',
                         Price: 45.50,
                         Opened: true,
                         Lecturer: 'Marek Portugalski'

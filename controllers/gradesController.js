@@ -36,11 +36,10 @@ exports.showAddGradeForm = (req, res, next) => {
                 pageTitle: 'New Grade',
                 btnLabel: 'Add Grade',
                 formAction: '/grades/add',
-                navLocation: 'grades'
+                navLocation: 'grades',
+                validationErrors: []
             });
         });
-
-
 }
 
 
@@ -64,7 +63,8 @@ exports.showGradesDetails = (req, res, next) => {
                 allStd: allStd,
                 pageTitle: 'Grade Details',
                 formAction: '',
-                navLocation: 'grades'
+                navLocation: 'grades',
+                validationErrors: []
             });
         });
 }
@@ -90,7 +90,8 @@ exports.showGradesEdit = (req, res, next) =>
                 allStd: allStd,
                 pageTitle: 'Grade Details',
                 formAction: '/grades/edit',
-                navLocation: 'grades'
+                navLocation: 'grades',
+                validationErrors: []
             });
         });
 }
@@ -102,7 +103,33 @@ exports.addGrade = (req, res, next) => {
     GradesRepository.createGrade(grdData)
         .then(result => {
             res.redirect('/grades')
-        });
+        })
+        .catch(err => {
+            const grdId = req.params.grdId;
+            let allSbj, allStd;
+            SubjectRepository.getSubjects()
+                .then(subjects => {
+                    allSbj = subjects;
+                    return StudentRepository.getStudents()
+                })
+                .then(students => {
+                    allStd = students;
+                    return GradesRepository.getGradeById(grdId)
+                })
+                .then(grades => {
+                    res.render('pages/grade/form', {
+                        grades: grdData,
+                        formMode: 'createNew',
+                        allSbj: allSbj,
+                        allStd: allStd,
+                        pageTitle: 'New Grade',
+                        btnLabel: 'Add Grade',
+                        formAction: '/grades/add',
+                        navLocation: 'grades',
+                        validationErrors: err.errors
+                    });
+                });
+        })
 };
 
 exports.updateGrade = (req, res, next) => {
@@ -114,8 +141,35 @@ exports.updateGrade = (req, res, next) => {
     GradesRepository.updateGrade(grdId, grdData)
         .then(result => {
             res.redirect('/grades');
-        });
-};
+        })
+        .catch(err => {
+            let allSbj, allStd;
+            SubjectRepository.getSubjects()
+                .then(subjects => {
+                    allSbj = subjects;
+                    return StudentRepository.getStudents()
+                })
+                .then(students => {
+                    allStd = students;
+                    return GradesRepository.getGradeById(grdId)
+                })
+                .then(grades => {
+                    res.render('pages/grade/form', {
+                        grades: grades,
+                        formMode: 'edit',
+                        btnLabel: 'Edit Grade',
+                        allSbj: allSbj,
+                        allStd: allStd,
+                        pageTitle: 'Grade Details',
+                        formAction: '/grades/edit',
+                        navLocation: 'grades',
+                        validationErrors: err.errors
+                    });
+                });
+        })
+}
+
+
 
 exports.deleteGrade = (req, res, next) => {
     const grdId = req.params.grdId;

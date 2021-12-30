@@ -23,7 +23,7 @@ exports.getSubjectById = (subId) => {
 exports.createSubject = (newSubjectData) => {
     return Subject.create({
         Name: newSubjectData.Name,
-        ShortName: newSubjectData.ShortName,
+        Shortname: newSubjectData.Shortname,
         Price: newSubjectData.Price,
         Opened: newSubjectData.Opened,
         Lecturer: newSubjectData.Lecturer
@@ -32,7 +32,7 @@ exports.createSubject = (newSubjectData) => {
 
 exports.updateSubject = (subId, subjectData) => {
     const Name = subjectData.Name;
-    const ShortName = subjectData.ShortName;
+    const Shortname = subjectData.Shortname;
     const Price = subjectData.Price;
     const Opened = subjectData.Opened;
     const Lecturer = subjectData.Lecturer;

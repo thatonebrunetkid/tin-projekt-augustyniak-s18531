@@ -19,7 +19,8 @@ exports.showAddSubjectForm = (req, res, next) => {
         formMode: 'createNew',
         btnLabel: 'createNew',
         formAction: '/subjects/add',
-        navLocation: 'subject'
+        navLocation: 'subject',
+        validationErrors: []
     });
 }
 
@@ -33,7 +34,8 @@ exports.showSubjectDetails = (req, res, next) => {
                 formMode: 'showDetails',
                 pageTitle: 'Subject Details',
                 formAction: '',
-                navLocation: 'subject'
+                navLocation: 'subject',
+                validationErrors: []
             });
         });
 }
@@ -48,7 +50,8 @@ exports.showSubjectEdit = (req, res, next) => {
                 pageTitle: 'Edit subject',
                 btnLabel: 'Edit subject',
                 formAction: '/subjects/edit',
-                navLocation: 'subject'
+                navLocation: 'subject',
+                validationErrors: []
             });
         });
 };
@@ -58,17 +61,44 @@ exports.addSubject = (req, res, next) => {
     SubjectRepository.createSubject(sbjData)
         .then( result => {
             res.redirect('/subjects');
-        });
+        })
+        .catch(err => {
+            res.render('pages/subject/form', {
+                subject: sbjData,
+                pageTitle: 'Add Subject',
+                formMode: 'createNew',
+                btnLabel: 'Add Subject',
+                formAction: '/subjects/add',
+                navLocation: 'subject',
+                validationErrors: err.errors
+            });
+        })
 };
 
 exports.updateSubject = (req, res, next) => {
     const subId = req.body._id;
     const sbjData = { ...req.body };
-    console.log('loglogloglog' + {...req.body.Name});
+    console.log('loglogloglog' + {...req.body.Opened});
     SubjectRepository.updateSubject(subId, sbjData)
         .then( result => {
             res.redirect('/subjects');
-        });
+        })
+        .catch(err => {
+            SubjectRepository.getSubjectById(subId)
+                .then(subject => {
+                    res.render('pages/subject/form', {
+                        subject: subject,
+                        formMode: 'edit',
+                        pageTitle: 'Edit Subject',
+                        btnLabel: 'Edit Subject',
+                        formAction: '/subjects/edit',
+                        navLocation: 'subject',
+                        validationErrors: err.errors
+                    })
+                });
+            console.log('errerreerrreerreerrrerrr ' + err.errors)
+        })
+
 };
 
 exports.deteleSubject = (req, res, next) => {

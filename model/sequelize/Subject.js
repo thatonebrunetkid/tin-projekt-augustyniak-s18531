@@ -14,26 +14,23 @@ const Subject = sequelize.define('Subject', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wmagane"
+                msg: "Field required"
             },
             len: {
                 args: [1,10],
-                masg: "Pole moze zawierac max 10 zankow"
+                msg: "Maximum 10 signs"
             },
         }
 
     },
 
-    ShortName:{
+    Shortname:{
         type: Sequelize.STRING(3),
         allowNull: true,
         validate: {
-            notEmpty: {
-                msg: "Pole wymagane"
-            },
             len: {
-                args: [1,3],
-                msg: "Pole moze zawierac max 3 znaki"
+                args: [0,3],
+                msg: "Maximum 3 signs"
             },
         }
     },
@@ -43,10 +40,10 @@ const Subject = sequelize.define('Subject', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
             isDecimal: {
-                msg: "Tylko wartosci liczbowe"
+                msg: "Only digit value"
             },
         }
     },
@@ -56,8 +53,9 @@ const Subject = sequelize.define('Subject', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
+            not: 'Select option'
         }
     },
 
@@ -66,11 +64,11 @@ const Subject = sequelize.define('Subject', {
         allowNull: false,
         validate: {
             notEmpty: {
-                msg: "Pole wymagane"
+                msg: "Field required"
             },
             len:{
                 args: [1,30],
-                msg: "Pole moze zawierac max 30 znakow"
+                msg: "Maximum 30 signs"
             },
         }
     },
