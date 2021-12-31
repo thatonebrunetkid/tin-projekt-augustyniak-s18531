@@ -21,54 +21,54 @@ function validateGradesForm()
     {
         valid = false;
         studentNameSelection.classList.add("error-input");
-        studentSelectionError.innerText="Pole jest wymagane";
+        studentSelectionError.innerText="Field required";
     }
 
     if(!checkRequired(gradeValueInput.value))
     {
         valid = false;
         gradeValueInput.classList.add("error-input");
-        gradeValueError.innerText="Pole jest wymagane";
+        gradeValueError.innerText="Field required";
     } else if (!checkDecimalFormat(gradeValueInput.value))
     {
         valid = false;
         gradeValueInput.classList.add("error-input");
-        gradeValueError.innerText = "Ocena powinna miescic sie w przediale 1 - 5";
+        gradeValueError.innerText = "The grade should be value between 1 and 5";
     }
 
     if(!checkRequired(dateValueInput.value))
     {
         valid = false;
         dateValueInput.classList.add("error-input");
-        dateValueError.innerText = "Pole jest wymagane";
+        dateValueError.innerText = "Field required";
     }else if (!checkDateFormat(dateValueInput.value))
     {
         valid = false;
         dateValueInput.classList.add("error-input");
-        dateValueError.innerText = "Bledny format daty";
+        dateValueError.innerText = "Invalid date format";
     } else if (!checkIfDateIsNotGraterThanToday(dateValueInput.value))
     {
         valid = false;
         dateValueInput.classList.add("error-input");
-        dateValueError.innerText = "Podana data jest z przyszlosci!"
+        dateValueError.innerText = "Given date cannot be future!"
     }
 
     if (!checkTextLengthRange(commentValueInput.value, 50))
     {
         valid = false;
         commentValueInput.classList.add("error-input");
-        commentValueError.innerText = "Komentarz nie moze byc dluzszy od 50 znakow";
+        commentValueError.innerText = "Comment cannot be longer than 50 signs";
     }
 
     if(!checkSelection(subjectSelectionInput.value)){
     valid = false;
     subjectSelectionInput.classList.add("error-input");
-    subjectSelectionError.innerText = "Pole jest wymagane";
+    subjectSelectionError.innerText = "Field required";
     }
 
     if(!valid)
     {
-        errorSummary.innerText = "Formularz zawiera bledy";
+        errorSummary.innerText = "The form contains errors";
     }
 
     return valid;

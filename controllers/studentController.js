@@ -89,8 +89,9 @@ exports.updateStudent = (req, res, next) => {
         .catch(err => {
             StudentRepository.getStudentById(stdId)
                 .then(student => {
+                    stdData._id = student._id
                     res.render('pages/student/form', {
-                        student: student,
+                        student: stdData,
                         formMode: 'edit',
                         pageTitle: 'Edit Student',
                         btnLabel: 'Edit Student',

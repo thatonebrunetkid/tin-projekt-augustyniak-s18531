@@ -24,97 +24,97 @@ function validateStudentForm()
     {
         valid = false;
         nameInputValue.classList.add("error-input");
-        nameInputError.innerText = "Pole wymagane";
+        nameInputError.innerText = "Field required";
     } else if(!checkTextLengthRange(nameInputValue.value, 15))
     {
         valid = false;
         nameInputValue.classList.add("error-input");
-        nameInputError.innerText = "Pole powinno zawierac max 15 znakow";
+        nameInputError.innerText = "Value should not be longer than 15 signs";
     } else if(!checkIfLettersOnly(nameInputValue.value))
     {
         valid = false;
         nameInputValue.classList.add("error-input");
-        nameInputError.innerText = "Pole powinno zawierac same litery!";
+        nameInputError.innerText = "Letters allowed only";
     }
 
     if(!checkRequired(surnameInputValue.value))
     {
         valid = false;
         surnameInputValue.classList.add("error-input");
-        surnameInputError.innerText = "Pole wymagane";
+        surnameInputError.innerText = "Field required";
     } else if(!checkTextLengthRange(surnameInputValue.value, 30))
     {
         valid = false;
         surnameInputValue.classList.add("error-input");
-        surnameInputError.innerText = "Pole powinno zawierac max 30 znakow";
+        surnameInputError.innerText = "Value should not be longer than 30 signs";
     } else if(!checkIfLettersOnly(surnameInputValue.value))
     {
         valid = false;
         surnameInputValue.classList.add("error-input");
-        surnameInputError.innerText = "Pole powinno zawierac same litery";
+        surnameInputError.innerText = "Letters allowed only";
     }
 
     if(!checkRequired(adressInputValue.value))
     {
         valid = false;
         adressInputValue.classList.add("error-input");
-        adressInputError.innerText = "Pole wymagane";
+        adressInputError.innerText = "Field required";
     } else if (!checkTextLengthRange(adressInputValue.value, 50))
     {
         valid = false;
         adressInputValue.classList.add("error-input");
-        adressInputError.innerText = "Pole powinno zawierac max 50 znakow";
+        adressInputError.innerText = "Value shot not be longer than 50 signs";
     } else if (!checkAdress(adressInputValue.value))
     {
         valid = false;
         adressInputValue.classList.add("error-input");
-        adressInputError.innerText = "Bledny format adresu";
+        adressInputError.innerText = "Incorrect Address format";
     }
 
     if(!checkRequired(zipCodeInputValue.value))
     {
         valid = false;
         zipCodeInputValue.classList.add("error-input");
-        zipCodeInputError.innerText = "Pole wymagane";
+        zipCodeInputError.innerText = "Field required";
     } else if(!checkZipCode(zipCodeInputValue.value))
     {
         valid = false;
         zipCodeInputValue.classList.add("error-input");
-        zipCodeInputError.innerText = "Bledny format kodu pocztowego";
+        zipCodeInputError.innerText = "Invalid ZipCode format";
     }
 
     if(!checkRequired(birthdateInputValue.value))
     {
         valid = false;
         birthdateInputValue.classList.add("error-input");
-        birthdateInputError.innerText = "Pole wymagane";
+        birthdateInputError.innerText = "Field required";
     } else if(!checkDateFormat(birthdateInputValue.value))
     {
         valid = false;
         birthdateInputValue.classList.add("error-input");
-        birthdateInputError.innerText = "Bledny format daty";
+        birthdateInputError.innerText = "Incorrect date format";
     } else if (!checkIfDateIsNotGraterThanToday(birthdateInputValue.value))
     {
         valid = false;
         birthdateInputValue.classList.add("error-input");
-        birthdateInputError.innerText = "Data nie moze byc pozniejsza";
+        birthdateInputError.innerText = "Date cannot be future";
     }
 
     if(!checkRequired(peselInputValue.value))
     {
         valid = false;
         peselInputValue.classList.add("error-input");
-        peselInputError.innerText = "Pole wymagane";
+        peselInputError.innerText = "Field required";
     }else if(!checkPesel(peselInputValue.value))
     {
         valid = false;
         peselInputValue.classList.add("error-input");
-        peselInputError.innerText = "Bledny format PESEL";
+        peselInputError.innerText = "Incorrect PESEL format";
     }
 
     if(!valid)
     {
-        summaryError.innerText = "Formularz zawiera bledy!";
+        summaryError.innerText = "Form contains errors";
     }
 
     return valid;

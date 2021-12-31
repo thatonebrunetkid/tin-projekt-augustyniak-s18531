@@ -154,8 +154,14 @@ exports.updateGrade = (req, res, next) => {
                     return GradesRepository.getGradeById(grdId)
                 })
                 .then(grades => {
+
+                    grdData._id = grades._id;
+                    grdData.student = grades.student;
+                    grdData.subject = grades.subject;
+                    grdData.allStd = grades.allStd;
+                    grdData.allSbj = grades.allSbj;
                     res.render('pages/grade/form', {
-                        grades: grades,
+                        grades: grdData,
                         formMode: 'edit',
                         btnLabel: 'Edit Grade',
                         allSbj: allSbj,

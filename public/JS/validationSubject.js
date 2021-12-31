@@ -21,56 +21,56 @@ function validateSubjectForm()
     {
         valid = false;
         subjectNameInput.classList.add("error-input");
-        subjectNameError.innerText = "Pole jest wymagane"
+        subjectNameError.innerText = "Field required"
     } else if(!checkTextLengthRange(subjectNameInput.value, 10))
     {
         valid = false;
         subjectNameInput.classList.add("error-input");
-        subjectNameError.innerText = "Nazwa nie moze byc dluzsza od 10 znakow"
+        subjectNameError.innerText = "Value cannot be longer than 10 signs"
     }
 
    if(!checkTextLengthRange(shortNameInput.value, 3))
     {
         valid = false;
         shortNameInput.classList.add("error-input");
-        shortNameError.innerText = "Pole nie moze zawierac wiecej jak 3 znaki"
+        shortNameError.innerText = "Value cannot be longer than 3 signs"
     }
 
     if(!checkRequired(priceInput.value))
     {
         valid = false;
         priceInput.classList.add("error-input");
-        priceError.innerText = "Pole jest wymagane";
+        priceError.innerText = "Field required";
     }else if(!checkPrice(priceInput.value))
     {
         valid = false;
         priceInput.classList.add("error-input");
-        priceError.innerText = "Zly format kwoty";
+        priceError.innerText = "Wrong amount format";
     }
 
     if(!checkSelection(availibilityInput.value))
     {
         valid = false;
         availibilityInput.classList.add("error-input");
-        availibilityError.innerText = "Pole jest wymagane";
+        availibilityError.innerText = "Field required";
     }
 
     if(!checkRequired(lecturerInput.value))
     {
         valid = false;
         lecturerInput.classList.add("error-input");
-        lecturerError.innerText = "Pole wymagane";
+        lecturerError.innerText = "Field required";
     }else if(!checkTextLengthRange(lecturerInput.value, 30))
     {
         valid = false;
         lecturerInput.classList.add("error-input");
-        lecturerError.innerText = "Pole musi zawierac max 30 znakow";
+        lecturerError.innerText = "Value cannot be longer than 30 signs";
     }
 
 
     if(!valid)
     {
-        generalError.innerText = "Formularz zawiera bledy";
+        generalError.innerText = "Forms contains errors";
     }
 
     return valid;

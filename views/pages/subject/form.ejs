@@ -30,7 +30,7 @@
                 <p></p>
                 <label class="LoginLabel">Short Name</label>
                 <p></p>
-                <input class="TextField" style="border: <%= validationErrors.find(e => e.path.includes('Shortname')) ? '1px solid red' : ''%>" type="text" name="Shortname" id="shortName" placeholder="Max 3" value="<%= subject.ShortName%>"
+                <input class="TextField" style="border: <%= validationErrors.find(e => e.path.includes('Shortname')) ? '1px solid red' : ''%>" type="text" name="Shortname" id="shortName" placeholder="Max 3" value="<%= subject.Shortname%>"
                         <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
                 <p></p>
                 <span id="shortNameError">
@@ -53,7 +53,7 @@
                 <label class="LoginLabel">Availibility*</label>
                 <p></p>
                 <select id="Availibility" style="border: <%= validationErrors.find(e => e.path.includes('Opened')) ? '1px solid red' : ''%>" name="Opened" class="SelectField" required <%= (formMode == 'showDetails') ? 'disabled' : ''%> >
-                    <option value="<% if(subject.Opened == true) {%>true<%} else if (subject.Opened === false) {%>false<%}%>"><% if(subject.Opened == true) {%>Available<%} else if (subject.Opened === false) {%> Unavailable <%} else {%>Select option<%}%></option>
+                    <option value="<% if(subject.Opened == true) {%>true<%} else if (subject.Opened === false) {%>false<%} else{%>Select option<%}%>"><% if(subject.Opened == true) {%>Available<%} else if (subject.Opened === false) {%> Unavailable <%} else {%>Select option<%}%></option>
                     <option value="true">Available</option>
                     <option value="false">Unavailable</option>
                 </select>
@@ -74,7 +74,7 @@
                         <%= validationErrors.find(e => e.path.includes('Lecturer')).message %>
                     <%}%>
                 </span>
-                <% if (formMode == 'showDetails' || formMode == 'edit') {%>
+                <% if (formMode == 'showDetails') {%>
                     <table class="gradesTable">
                         <thead>
                         <tr>

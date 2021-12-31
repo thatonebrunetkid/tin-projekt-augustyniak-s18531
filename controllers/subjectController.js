@@ -86,8 +86,11 @@ exports.updateSubject = (req, res, next) => {
         .catch(err => {
             SubjectRepository.getSubjectById(subId)
                 .then(subject => {
+                    sbjData._id = subject._id;
+                    sbjData.Opened = subject.Opened;
+                    console.log(sbjData);
                     res.render('pages/subject/form', {
-                        subject: subject,
+                        subject: sbjData,
                         formMode: 'edit',
                         pageTitle: 'Edit Subject',
                         btnLabel: 'Edit Subject',
